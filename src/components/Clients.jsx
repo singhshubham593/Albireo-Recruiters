@@ -26,7 +26,7 @@ const Row = ({ reverse = false, delay = 0 }) => {
     transition: {
       repeat: Infinity,
       ease: "linear",
-      duration: 20,
+      duration: 50,
       delay,
     },
   };
@@ -68,8 +68,8 @@ const Clients = () => {
       </p>
       <div className="mt-10">
         <Row reverse={false} />
-        <Row reverse={true} delay={2} />
-        <Row reverse={false} delay={4} />
+        {/*<Row reverse={true} delay={2} />*/}
+        {/*<Row reverse={false} delay={4} />*/}
       </div>
     </div>
   );
