@@ -6,7 +6,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileDropdown, setMobileDropdown] = useState(null);
 
-  const menuItems = ["JobSeekers", "Employers", "About", "Contact"];
+  const menuItems = ["JobSeekers", "Employers", "Contact"," Partner"];
 
   const megaMenuData = {
     JobSeekers : {
@@ -57,30 +57,6 @@ export default function Header() {
         "Google Reviews",
       ],
     },
-    About: {
-      leftCard: {
-        img: "https://via.placeholder.com/150",
-        title: "Ready to recruit",
-        desc: "The right candidate is just a few clicks away.",
-        btn: "Request a call back",
-      },
-      leftNav: ["Looking to Hire?", "Contracting", "Reports and Resources"],
-      talent: [
-        "Technology",
-        "Banking & Financial Services",
-        "Finance & Accounting",
-        "Healthcare and Life Sciences",
-        "Human Resources",
-      ],
-      advantages: [
-        "Candidate Verification",
-        "Our Sourcing Methodology",
-        "Executive Search",
-        "Recruitment Outsourcing",
-        "Job advertising: ReachTalent",
-        "Google Reviews",
-      ],
-    },
     Contact: {
       leftCard: {
         img: "https://via.placeholder.com/150",
@@ -105,18 +81,43 @@ export default function Header() {
         "Google Reviews",
       ],
     },
+    Partner: {
+      leftCard: {
+        img: "https://via.placeholder.com/150",
+        title: "Ready to recruit",
+        desc: "The right candidate is just a few clicks away.",
+        btn: "Request a call back",
+      },
+      leftNav: ["Looking to Hire?", "Contracting", "Reports and Resources"],
+      talent: [
+        "Technology",
+        "Banking & Financial Services",
+        "Finance & Accounting",
+        "Healthcare and Life Sciences",
+        "Human Resources",
+      ],
+      advantages: [
+        "Candidate Verification",
+        "Our Sourcing Methodology",
+        "Executive Search",
+        "Recruitment Outsourcing",
+        "Job advertising: ReachTalent",
+        "Google Reviews",
+      ],
+    },
+    
   };
 
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50 rounded-full">
+    <header className="bg-white shadow-md sticky m-10 md:mx-15 lg:mx-25 xl:35 2xl:45 z-50 rounded-lg">
       <div className="max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
-        <div className="text-xl font-bold text-blue-800">
-          Albieo<span className="text-orange-500"> Recruiter</span>
+        <div className="text-xl font-bold text-black">
+          Albieo<span className="text-black"> Recruiter</span>
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-6 font-medium text-sm relative">
+        <nav className="hidden md:flex gap-6 font-medium text-sm relative ">
           {menuItems.map((item) => (
             <div
               key={item}
@@ -190,15 +191,7 @@ export default function Header() {
 
         {/* Right Controls */}
         <div className="flex items-center gap-4">
-          {/* Search */}
-          <div className="relative hidden sm:block">
-            <input
-              type="text"
-              placeholder="Search jobs here"
-              className="rounded-full px-4 py-1 text-sm border border-gray-300"
-            />
-            <span className="absolute right-2 top-1.5 text-blue-600">🔍</span>
-          </div>
+                     
 
           {/* Notifications */}
           <div className="relative ">
@@ -207,14 +200,13 @@ export default function Header() {
               7
             </span>
           </div>
-
           {/* Profile */}
           <img
             src="https://i.pravatar.cc/40"
             className="w-8 h-8 rounded-full "
             alt="profile"
           />
-
+          
           {/* Mobile Menu Toggle */}
           <button
             className="md:hidden"
