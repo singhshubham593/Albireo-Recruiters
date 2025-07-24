@@ -6,7 +6,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileDropdown, setMobileDropdown] = useState(null);
 
-  const menuItems = ["JobSeekers", "Employers", "Contact"," Partner"];
+  const menuItems = ["JobSeekers", "Employers","About", "Contact"," Partner"];
 
   const megaMenuData = {
     JobSeekers : {
@@ -34,6 +34,30 @@ export default function Header() {
       ],
     },
     Employers: {
+      leftCard: {
+        img: "https://via.placeholder.com/150",
+        title: "Ready to recruit",
+        desc: "The right candidate is just a few clicks away.",
+        btn: "Request a call back",
+      },
+      leftNav: ["Looking to Hire?", "Contracting", "Reports and Resources"],
+      talent: [
+        "Technology",
+        "Banking & Financial Services",
+        "Finance & Accounting",
+        "Healthcare and Life Sciences",
+        "Human Resources",
+      ],
+      advantages: [
+        "Candidate Verification",
+        "Our Sourcing Methodology",
+        "Executive Search",
+        "Recruitment Outsourcing",
+        "Job advertising: ReachTalent",
+        "Google Reviews",
+      ],
+    },
+    About: {
       leftCard: {
         img: "https://via.placeholder.com/150",
         title: "Ready to recruit",
