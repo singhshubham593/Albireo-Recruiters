@@ -4,6 +4,7 @@ import { Bell, Menu, X } from "lucide-react";
 export default function Header() {
   const [activeTab, setActiveTab] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileDropdown, setMobileDropdown] = useState(null);
 
   const menuItems = ["JobSeekers", "Employers", "About", "Contact"];
 
@@ -107,7 +108,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
+    <header className="bg-white shadow-md sticky top-0 z-50 rounded-full">
       <div className="max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
         <div className="text-xl font-bold text-blue-800">
@@ -229,8 +230,15 @@ export default function Header() {
         <div className="md:hidden px-4 pb-4">
           {menuItems.map((item) => (
             <div key={item} className="py-2 border-b text-gray-700">
-              {item}
-              {megaMenuData[item] && (
+              <button
+                className="w-full text-left font-semibold"
+                onClick={() =>
+                  setMobileDropdown(mobileDropdown === item ? null : item)
+                }
+              >
+                {item}
+              </button>
+                            {mobileDropdown === item && (
                 <div className="pl-4 pt-2 text-sm text-gray-600 space-y-1">
                   {megaMenuData[item].leftNav.map((nav, i) => (
                     <div key={i}>{nav}</div>
