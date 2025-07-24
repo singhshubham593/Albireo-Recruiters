@@ -1,110 +1,249 @@
- // src/components/Header.jsx
-import React, { useState } from "react";
-import Albireo from "../assets/AlbireoLogo.png";
+ import { useState } from "react";
+import { Bell, Menu, X } from "lucide-react";
 
-const Header = () => {
+export default function Header() {
   const [activeTab, setActiveTab] = useState(null);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const handleMouseEnter = (tab) => setActiveTab(tab);
-  const handleMouseLeave = () => setActiveTab(null);
+  const menuItems = ["JobSeekers", "Employers", "About", "Contact"];
+
+  const megaMenuData = {
+    JobSeekers : {
+      leftCard: {
+        img: "https://via.placeholder.com/150",
+        title: "Ready to recruit",
+        desc: "The right candidate is just a few clicks away.",
+        btn: "Request a call back",
+      },
+      leftNav: ["Looking to Hire?", "Contracting", "Reports and Resources"],
+      talent: [
+        "Technology",
+        "Banking & Financial Services",
+        "Finance & Accounting",
+        "Healthcare and Life Sciences",
+        "Human Resources",
+      ],
+      advantages: [
+        "Candidate Verification",
+        "Our Sourcing Methodology",
+        "Executive Search",
+        "Recruitment Outsourcing",
+        "Job advertising: ReachTalent",
+        "Google Reviews",
+      ],
+    },
+    Employers: {
+      leftCard: {
+        img: "https://via.placeholder.com/150",
+        title: "Ready to recruit",
+        desc: "The right candidate is just a few clicks away.",
+        btn: "Request a call back",
+      },
+      leftNav: ["Looking to Hire?", "Contracting", "Reports and Resources"],
+      talent: [
+        "Technology",
+        "Banking & Financial Services",
+        "Finance & Accounting",
+        "Healthcare and Life Sciences",
+        "Human Resources",
+      ],
+      advantages: [
+        "Candidate Verification",
+        "Our Sourcing Methodology",
+        "Executive Search",
+        "Recruitment Outsourcing",
+        "Job advertising: ReachTalent",
+        "Google Reviews",
+      ],
+    },
+    About: {
+      leftCard: {
+        img: "https://via.placeholder.com/150",
+        title: "Ready to recruit",
+        desc: "The right candidate is just a few clicks away.",
+        btn: "Request a call back",
+      },
+      leftNav: ["Looking to Hire?", "Contracting", "Reports and Resources"],
+      talent: [
+        "Technology",
+        "Banking & Financial Services",
+        "Finance & Accounting",
+        "Healthcare and Life Sciences",
+        "Human Resources",
+      ],
+      advantages: [
+        "Candidate Verification",
+        "Our Sourcing Methodology",
+        "Executive Search",
+        "Recruitment Outsourcing",
+        "Job advertising: ReachTalent",
+        "Google Reviews",
+      ],
+    },
+    Contact: {
+      leftCard: {
+        img: "https://via.placeholder.com/150",
+        title: "Ready to recruit",
+        desc: "The right candidate is just a few clicks away.",
+        btn: "Request a call back",
+      },
+      leftNav: ["Looking to Hire?", "Contracting", "Reports and Resources"],
+      talent: [
+        "Technology",
+        "Banking & Financial Services",
+        "Finance & Accounting",
+        "Healthcare and Life Sciences",
+        "Human Resources",
+      ],
+      advantages: [
+        "Candidate Verification",
+        "Our Sourcing Methodology",
+        "Executive Search",
+        "Recruitment Outsourcing",
+        "Job advertising: ReachTalent",
+        "Google Reviews",
+      ],
+    },
+  };
 
   return (
-    <header className="px-4 py-3 shadow-lg bg-white rounded-2xl mb-10 w-full">
-      <div className="flex items-center justify-between flex-wrap">
+    <header className="bg-white shadow-md sticky top-0 z-50">
+      <div className="max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center gap-2 mb-3 md:mb-0">
-          <img
-            src={Albireo}
-            alt="Logo"
-            className="w-8 h-8 rounded-full object-cover"
-          />
-          <span className="font-bold text-xl text-gray-800">Albireo</span>
-          <span className="font-bold text-xl text-gray-800 hidden sm:inline">Recruiters</span>
+        <div className="text-xl font-bold text-blue-800">
+          Albieo<span className="text-orange-500"> Recruiter</span>
         </div>
 
-        {/* Right Section (Mobile Hamburger + Profile Icons) */}
-        <div className="flex items-center gap-4 md:hidden">
-          {/* Profile & Notification in Mobile */}
-          <div className="flex items-center gap-3">
-            <div className="relative">
-              <span className="text-xl">🔔</span>
-              <span className="absolute -top-1 -right-1 bg-yellow-400 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
-                1
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex gap-6 font-medium text-sm relative">
+          {menuItems.map((item) => (
+            <div
+              key={item}
+              onMouseEnter={() => setActiveTab(item)}
+              onMouseLeave={() => setActiveTab(null)}
+              className=""
+            >
+              <span className="cursor-pointer hover:text-blue-600">
+                {item}
               </span>
-            </div>
-            <div className="relative flex items-center gap-2">
-              <div
-                className="w-8 h-8 rounded-full bg-cover bg-center"
-                style={{ backgroundImage: `url('https://i.pravatar.cc/150?img=3')` }}
-              ></div>
-              <span className="absolute -top-1 -right-2 bg-yellow-400 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
-                2
-              </span>
-            </div>
-          </div>
 
-          {/* Mobile Menu Toggle */}
-          <button onClick={() => setMenuOpen(!menuOpen)} className="text-blue-600 text-2xl focus:outline-none">
-            ☰
-          </button>
-        </div>
+              {/* Mega Menu (Desktop Only) */}
+              {activeTab === item && megaMenuData[item] && (
+                <div className="absolute top-8 left-0 w-[800px] bg-white shadow-2xl rounded-xl p-6 flex gap-6 z-50">
+                  {/* Left Card */}
+                  <div className="w-1/4 border-r pr-4">
+                    <img
+                      src={megaMenuData[item].leftCard.img}
+                      alt="recruit"
+                      className="rounded-xl mb-3"
+                    />
+                    <h4 className="font-semibold text-gray-800 text-sm">
+                      {megaMenuData[item].leftCard.title}
+                    </h4>
+                    <p className="text-xs text-gray-600 mb-3">
+                      {megaMenuData[item].leftCard.desc}
+                    </p>
+                    <button className="bg-blue-800 text-white px-3 py-1 rounded text-sm">
+                      {megaMenuData[item].leftCard.btn}
+                    </button>
+                  </div>
 
-        {/* Main Nav & Controls */}
-        <div className={`w-full md:flex md:items-center md:justify-between ${menuOpen ? "block" : "hidden"} mt-4 md:mt-0`}>
-          {/* Nav Links */}
-          <nav className="text-gray-900 z-50 mb-4 md:mb-0">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-3 md:gap-8 text-sm font-medium">
-              {["Job Seekers", "Employers", "About", "Contact"].map((item) => (
-                <div
-                  key={item}
-                  className={`cursor-pointer hover:text-blue-600 transition-all duration-300 ${
-                    activeTab === item ? "text-yellow-500 underline" : ""
-                  }`}
-                  onMouseEnter={() => handleMouseEnter(item)}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  {item}
+                  {/* Middle Nav */}
+                  <div className="w-1/4 text-sm border-r pr-4">
+                    <h5 className="font-semibold mb-2">Looking to Hire?</h5>
+                    <ul className="space-y-1 text-gray-700">
+                      {megaMenuData[item].leftNav.map((nav, i) => (
+                        <li key={i}>{nav}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Talent Section */}
+                  <div className="w-1/4 text-sm border-r pr-4">
+                    <h5 className="font-semibold mb-2">
+                      Looking for Talent in
+                    </h5>
+                    <ul className="space-y-1 text-gray-700">
+                      {megaMenuData[item].talent.map((t, i) => (
+                        <li key={i}>{t}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Competitive Advantage */}
+                  <div className="w-1/4 text-sm">
+                    <h5 className="font-semibold mb-2">
+                      Our Competitive Advantages
+                    </h5>
+                    <ul className="space-y-1 text-gray-700">
+                      {megaMenuData[item].advantages.map((a, i) => (
+                        <li key={i}>{a}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-              ))}
+              )}
             </div>
-          </nav>
+          ))}
+        </nav>
 
-          {/* Search Bar */}
-          <div className="relative w-full md:w-64 mb-4 md:mb-0">
+        {/* Right Controls */}
+        <div className="flex items-center gap-4">
+          {/* Search */}
+          <div className="relative hidden sm:block">
             <input
               type="text"
               placeholder="Search jobs here"
-              className="w-full rounded-full border border-gray-300 pl-4 pr-10 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="rounded-full px-4 py-1 text-sm border border-gray-300"
             />
-            <button className="absolute right-1 top-1 bottom-1 bg-blue-500 hover:bg-blue-600 transition-all rounded-full p-2 text-white">
-              🔍
-            </button>
+            <span className="absolute right-2 top-1.5 text-blue-600">🔍</span>
           </div>
 
-          {/* Notifications & Profile - Desktop */}
-          <div className="hidden md:flex items-center gap-4">
-            <div className="relative">
-              <span className="text-2xl">🔔</span>
-              <span className="absolute -top-1 -right-1 bg-yellow-400 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
-                1
-              </span>
-            </div>
-
-            <div className="relative flex items-center gap-2">
-              <div
-                className="w-8 h-8 rounded-full bg-cover bg-center"
-                style={{ backgroundImage: `url('https://i.pravatar.cc/150?img=3')` }}
-              ></div>
-              <span className="absolute -top-1 -right-2 bg-yellow-400 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
-                2
-              </span>
-            </div>
+          {/* Notifications */}
+          <div className="relative ">
+            <Bell className="h-5 w-5 text-gray-700" />
+            <span className="absolute -top-1 -right-2 bg-red-500 text-white text-xs px-1 rounded-full">
+              7
+            </span>
           </div>
+
+          {/* Profile */}
+          <img
+            src="https://i.pravatar.cc/40"
+            className="w-8 h-8 rounded-full "
+            alt="profile"
+          />
+
+          {/* Mobile Menu Toggle */}
+          <button
+            className="md:hidden"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X /> : <Menu />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden px-4 pb-4">
+          {menuItems.map((item) => (
+            <div key={item} className="py-2 border-b text-gray-700">
+              {item}
+              {megaMenuData[item] && (
+                <div className="pl-4 pt-2 text-sm text-gray-600 space-y-1">
+                  {megaMenuData[item].leftNav.map((nav, i) => (
+                    <div key={i}>{nav}</div>
+                  ))}
+                  {megaMenuData[item].talent.slice(0, 2).map((t, i) => (
+                    <div key={i}>{t}</div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
     </header>
   );
-};
-
-export default Header;
+}

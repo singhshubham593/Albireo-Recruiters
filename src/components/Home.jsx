@@ -37,12 +37,14 @@ const HeroSection = () => {
           ABC Consultants is India's leading executive search and talent advisory firm, proudly shaping the future of multinationals and Indian businesses for over 50 years
         </p>
         <div className="flex items-center gap-4">
-          <button className="inline-flex items-center gap-4 px-6 py-3 bg-gradient-to-r from-yellow-400 to-blue-600 text-black font-semibold rounded-full text-lg shadow-md hover:scale-105 transition transform duration-300">
-          Get In Touch
-          <span className="bg-black text-white rounded-full p-2">
-            <ArrowRight className="h-5 w-5" />
-          </span>
-        </button>
+           <button className="inline-flex items-center gap-3 px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 bg-gradient-to-r from-yellow-400 to-blue-600 text-black font-semibold rounded-full text-sm sm:text-base md:text-lg shadow-md hover:scale-105 transition transform duration-300">
+  Get In Touch
+  <span className="bg-black text-white rounded-full p-1 sm:p-2">
+    <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
+  </span>
+</button>
+
+
           <div className="flex gap-4 ml-4">
             <a href="#"><img src={Albireo} alt="LinkedIn" className="w-6 h-6" /></a>
             <a href="#"><img src={Albireo} alt="Facebook" className="w-6 h-6" /></a>
@@ -62,7 +64,7 @@ const HeroSection = () => {
           <img
             src={images[currentImage]}
             alt={`Slide ${currentImage + 1}`}
-            className="w-full h-auto object-cover rounded-lg transition-all duration-500 -translate-4"
+            className="h-80 w-140 object-cover rounded-lg transition-all duration-500 -translate-4"
           />
         </div>
         <div className="flex gap-2 mt-4">

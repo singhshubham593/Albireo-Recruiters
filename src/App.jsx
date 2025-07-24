@@ -8,6 +8,7 @@ import TeamSection from './components/TeamMember'
 import Review from './components/Review'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import Clients from './components/Clients'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
       <CallToAction />
       <TeamSection />
       <Review />
+      <Clients />
       <Contact />
       <Footer />
     </>
