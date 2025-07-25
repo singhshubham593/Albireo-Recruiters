@@ -1,5 +1,5 @@
 
-import Albireo from '../assets/AlbireoLogo.png'; 
+import Albireo from '../../assets/AlbireoLogo.png';
  import React from "react";
 import {
   FaLinkedin,

@@ -6,8 +6,8 @@ const CallToAction = () => {
     <div className="relative bg-white flex items-center justify-center overflow-hidden rounded-lg">
       {/* Background blob */}
       {/*<div className="absolute -top-32 -left-40 w-[600px] h-[600px] bg-gradient-to-tr from-green-300 via-green-400 to-green-500 rounded-full opacity-20 blur-3xl animate-pulse"></div>*/}
-      <div className="absolute -top-27 -left-110 w-[600px] h-[600px] bg-gradient-to-tr from-blue-300 via-blue-400 to-blue-500 rounded-full"></div>
-        <div className="absolute -top-27 -right-110 w-[600px] h-[600px] bg-gradient-to-tr from-blue-300 via-blue-400 to-blue-500 rounded-full"></div>
+      <div className="absolute -top-28 -left-110 w-[600px] h-[600px] bg-gradient-to-t from-yellow-500 via-yellow-100 via-blue-300 to-blue-600 rounded-full"></div>
+        <div className="absolute -top-29 -right-110 w-[600px] h-[600px] bg-gradient-to-t from-blue-600 via-blue-300 via-yellow-100 to-yellow-500 rounded-full"></div>
 
 
       {/* Card */}

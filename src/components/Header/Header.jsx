@@ -136,8 +136,8 @@ export default function Header() {
     <header className="bg-white shadow-md sticky m-10 md:mx-15 lg:mx-25 xl:35 2xl:45 z-50 rounded-lg">
       <div className="max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
-        <div className="text-xl font-bold text-black">
-          Albieo<span className="text-black"> Recruiter</span>
+        <div className=" font-bold text-black sm:text-sm md:text-lg lg:text-xl">
+          Albireo<span className="text-black"> Recruiters.in</span>
         </div>
 
         {/* Desktop Navigation */}

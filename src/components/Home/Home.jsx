@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import Albireo from "../assets/AlbireoLogo.png"; // Replace with your actual image
+import Albireo from "../../assets/AlbireoLogo.png"; // Replace with your actual image
 import { ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
@@ -25,41 +25,54 @@ const HeroSection = () => {
   return (
     <section className="flex flex-col md:flex-row items-center justify-between gap-8 px-6 md:px-20 py-12 bg-white">
       {/* Left Section */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="md:w-1/2">
+        className="md:w-1/2"
+      >
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
           Building careers. <br /> Building organisations.
         </h1>
         <p className="text-lg text-gray-700 mb-8">
-          ABC Consultants is India's leading executive search and talent advisory firm, proudly shaping the future of multinationals and Indian businesses for over 50 years
+          ABC Consultants is India's leading executive search and talent
+          advisory firm, proudly shaping the future of multinationals and Indian
+          businesses for over 50 years
         </p>
+        {/*
         <div className="flex items-center gap-4">
-           <button className="inline-flex items-center gap-3 px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 bg-gradient-to-r from-yellow-400 to-blue-600 text-black font-semibold rounded-full text-sm sm:text-base md:text-lg shadow-md hover:scale-105 transition transform duration-300">
-  Get In Touch
-  <span className="bg-black text-white rounded-full p-1 sm:p-2">
-    <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
-  </span>
-</button>
-
+          <button className="inline-flex items-center gap-3 px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 bg-gradient-to-r from-yellow-400 to-blue-600 text-black font-semibold rounded-full text-sm sm:text-base md:text-lg shadow-md hover:scale-105 transition transform duration-300">
+            Get In Touch
+            <span className="bg-black text-white rounded-full p-1 sm:p-2">
+              <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
+            </span>
+          </button>
 
           <div className="flex gap-4 ml-4">
-            <a href="#"><img src={Albireo} alt="LinkedIn" className="w-6 h-6" /></a>
-            <a href="#"><img src={Albireo} alt="Facebook" className="w-6 h-6" /></a>
-            <a href="#"><img src={Albireo} alt="Instagram" className="w-6 h-6" /></a>
-            <a href="#"><img src={Albireo} alt="Glassdoor" className="w-6 h-6" /></a>
+            <a href="#">
+              <img src={Albireo} alt="LinkedIn" className="w-6 h-6" />
+            </a>
+            <a href="#">
+              <img src={Albireo} alt="Facebook" className="w-6 h-6" />
+            </a>
+            <a href="#">
+              <img src={Albireo} alt="Instagram" className="w-6 h-6" />
+            </a>
+            <a href="#">
+              <img src={Albireo} alt="Glassdoor" className="w-6 h-6" />
+            </a>
           </div>
         </div>
+        */}
       </motion.div>
 
       {/* Right Section */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="md:w-1/2 flex flex-col items-center ">
+        className="md:w-1/2 flex flex-col items-center "
+      >
         <div className="bg-gradient-to-br from-gray-100 via-blue-100 to-yellow-600 rounded-2xl overflow-hidden shadow-lg w-full max-w-md">
           <img
             src={images[currentImage]}

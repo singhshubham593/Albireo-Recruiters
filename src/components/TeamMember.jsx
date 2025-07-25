@@ -1,85 +1,71 @@
-import React from "react";
+ import React from "react";
 import { motion } from "framer-motion";
 
-const teamMembers = [
-  // Replace these URLs with real image paths or imported assets
-  "https://randomuser.me/api/portraits/women/1.jpg",
-  "https://randomuser.me/api/portraits/men/2.jpg",
-  "https://randomuser.me/api/portraits/women/3.jpg",
-  "https://randomuser.me/api/portraits/men/4.jpg",
-  "https://randomuser.me/api/portraits/women/5.jpg",
-  "https://randomuser.me/api/portraits/men/6.jpg",
-  "https://randomuser.me/api/portraits/women/7.jpg",
-  "https://randomuser.me/api/portraits/men/8.jpg",
-  "https://randomuser.me/api/portraits/women/9.jpg",
-  "https://randomuser.me/api/portraits/men/10.jpg",
-  "https://randomuser.me/api/portraits/women/11.jpg",
-  "https://randomuser.me/api/portraits/men/12.jpg",
-  "https://randomuser.me/api/portraits/women/13.jpg",
-  "https://randomuser.me/api/portraits/men/14.jpg",
-  "https://randomuser.me/api/portraits/women/15.jpg",
-  "https://randomuser.me/api/portraits/men/16.jpg",
+const people = [
+  {
+    name: "Amit Sharma",
+    role: "Chief Executive Officer",
+    image: "https://randomuser.me/api/portraits/men/32.jpg",
+  },
+  {
+    name: "Priya Verma",
+    role: "Chief Technology Officer",
+    image: "https://randomuser.me/api/portraits/women/44.jpg",
+  },
+  {
+    name: "Raj Malhotra",
+    role: "Lead Designer",
+    image: "https://randomuser.me/api/portraits/men/75.jpg",
+  },
+  {
+    name: "Sneha Iyer",
+    role: "Product Manager",
+    image: "https://randomuser.me/api/portraits/women/66.jpg",
+  },
+  {
+    name: "Vikram Mehra",
+    role: "Marketing Head",
+    image: "https://randomuser.me/api/portraits/men/51.jpg",
+  },
 ];
 
-const container = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
+const duplicatedPeople = [...people, ...people]; // For infinite loop
 
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
-
-const TeamSection = () => {
+export default function OurPeople() {
   return (
-    <div className="bg-white py-16 px-6 md:px-12 text-center">
-      <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
-      >
+    <section className="bg-gradient-to-r from-blue-50 to-white py-12 px-4 sm:px-6 lg:px-12">
+      <h2 className="text-4xl font-extrabold text-center text-blue-900 mb-12">
         Our People
-      </motion.h2>
+      </h2>
 
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.6 }}
-        className="text-lg text-gray-700 max-w-3xl mx-auto mb-12"
-      >
-        The Executive Search industry's most seasoned consultants, bringing an
-        agile mindset, an empathetic perspective and an entrepreneurial spirit
-        to every client engagement.
-      </motion.p>
-
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="visible"
-        className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4 max-w-6xl mx-auto rounded-2xl overflow-hidden"
-      >
-        {teamMembers.map((src, index) => (
-          <motion.div
-            key={index}
-            variants={item}
-            className="w-full aspect-square"
-          >
-            <img
-              src={src}
-              alt={`Team member ${index + 1}`}
-              className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300"
-            />
-          </motion.div>
-        ))}
-      </motion.div>
-    </div>
+      <div className="overflow-hidden relative">
+        <motion.div
+          className="flex gap-6 w-max"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            repeat: Infinity,
+            duration: 25,
+            ease: "linear",
+          }}
+        >
+          {duplicatedPeople.map((person, index) => (
+            <div
+              key={index}
+              className="relative w-64 h-80 sm:w-72 sm:h-80 md:w-80 md:h-96 rounded-2xl overflow-hidden shadow-xl flex-shrink-0 group transform transition-all duration-500 hover:scale-105 hover:shadow-2xl bg-white"
+            >
+              <img
+                src={person.image}
+                alt={person.name}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute bottom-0 w-full bg-gradient-to-t from-black/80 to-transparent px-5 py-4 text-white">
+                <h3 className="text-xl font-bold">{person.name}</h3>
+                <p className="text-sm opacity-90">{person.role}</p>
+              </div>
+            </div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
   );
-};
-
-export default TeamSection;
+}
