@@ -4,7 +4,7 @@ import AlbireoLogo from "../assets/AlbireoLogo.png"; // Replace with your actual
 
 function WhyChooseUs() {
   return (
-    <div className="bg-white min-h-screen py-16 px-4 sm:px-8">
+    <div className="bg-white  py-16 px-4 sm:mb-5 md:mb-7 lg:mb-10 sm:px-8">
       <div className="text-center mb-12">
         <h1 className="text-4xl sm:text-6xl font-extrabold text-blue-200 uppercase">Why Choose Us?</h1>
         <h2 className="text-2xl sm:text-3xl font-bold text-blue-700 mt-2">Why Choose Us?</h2>

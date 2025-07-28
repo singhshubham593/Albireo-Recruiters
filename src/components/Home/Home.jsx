@@ -23,7 +23,7 @@ const HeroSection = () => {
   }, [images.length]);
 
   return (
-    <section className="flex flex-col md:flex-row items-center justify-between gap-8 px-6 md:px-20 py-12 bg-white">
+    <section className="flex flex-col md:flex-row items-center justify-between gap-8 lg:mt-10 mb-5 px-6 md:px-20 py-12 bg-white">
       {/* Left Section */}
       <motion.div
         initial={{ opacity: 0, y: 100 }}
