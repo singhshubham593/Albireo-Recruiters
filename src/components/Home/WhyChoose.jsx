@@ -1,9 +1,10 @@
 import React from "react";
 import Card from"../../pages/Card" // Assuming you have a Card component for displaying each feature
 import AlbireoLogo from "../../assets/AlbireoLogo.png" // Replace with your actual image
-import ProfilingRafiki from "../../assets/ProfilingRafiki.png"; // Replace with your actual image
+import ProfilingAmico from "../../assets/ProfilingAmico.png"; // Replace with your actual image
 import ResumeAmico from "../../assets/ResumeAmico.png"; // Replace with your actual image
 import BusinessDeal from "../../assets/BusinessDeal.png"; // Replace with your actual image
+import ProfilingRafiki from "../../assets/ProfilingRafiki.png"; // Replace with your actual image
 
 function WhyChooseUs() {
   return (
@@ -29,7 +30,7 @@ function WhyChooseUs() {
         <Card
           title=" Fast & SLA-Driven Delivery"
           icon="🛠️"
-          image={ProfilingRafiki}
+          image={ProfilingAmico}
           description="We follow a structured, metrics-driven process with quick turnaround times and guaranteed service levels."
         />
         <Card
