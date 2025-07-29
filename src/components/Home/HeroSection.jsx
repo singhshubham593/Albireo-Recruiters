@@ -31,14 +31,12 @@ const HeroSection = () => {
         transition={{ duration: 1, ease: "easeOut" }}
         className="md:w-1/2"
       >
+         
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-          About Albireo Recruiters. <br /> At Albireo Recruiters.
-        </h1>
-        {/* <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
            Building careers. <br /> Building organisations.
-        </h1> */}
+        </h1> 
         <p className="text-lg text-gray-700 mb-8">
-          We are a premier recruitment agency committed to delivering high-quality talent solutions to Tier 1 organizations across India. Established in 2017, we specialize in identifying, engaging, and placing top-tier professionals across key industries, including Technology, BFSI, Consulting, VLSI, and Shared Services.
+          Albireo Recruiters is a leading recruitment agency in India, specializing in hiring for Tier 1 companies across industries. We deliver fast, reliable, and domain-specific talent solutions with a focus on quality, speed, and long-term fit. Your trusted hiring partner, pan-India.
         </p>
         {/*
         <div className="flex items-center gap-4">

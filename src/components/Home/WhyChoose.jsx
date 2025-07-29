@@ -14,40 +14,40 @@ function WhyChooseUs() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch justify-items-center">
         <Card
-          title="Weight Discrepancy"
+          title="Trusted by Tier 1 Companies"
           icon="⚖️"
           image={ProfilingRafiki}
-          description="Resolve disputes effortlessly with our unique Weight Discrepancy Model. Say goodbye to the hassle – address weight-related issues easily."
+          description="We’ve built long-term partnerships with top enterprises across India by consistently delivering high-quality talent across industries."
         />
         <Card
-          title="Courier Partner Recommendation"
+          title="Domain-Specialized Hiring"
           icon="📦"
           image={ResumeAmico}
-          description="We recommend courier partners tailored to your delivery needs, improving shipping efficiency."
+          description="Whether it’s VLSI, BFSI, Consulting, Tech, or Shared Services — we bring deep industry expertise to every mandate."
         />
         <Card
-          title="Sync & Import Orders"
+          title=" Fast & SLA-Driven Delivery"
           icon="🛠️"
           image={ProfilingRafiki}
-          description="Integrate and import orders with a single click, enhancing automation and productivity."
+          description="We follow a structured, metrics-driven process with quick turnaround times and guaranteed service levels."
         />
         <Card
-          title="Weight Discrepancy"
+          title="Pan-India Reach"
           icon="⚖️"
           image={ProfilingRafiki}
-          description="Resolve disputes effortlessly with our unique Weight Discrepancy Model. Say goodbye to the hassle – address weight-related issues easily."
+          description="Our network of recruiters spans all major metros and Tier 2 cities, enabling us to fulfill hiring needs across India."
         />
         <Card
-          title="Courier Partner Recommendation"
+          title="Candidate-Centric Approach"
           icon="📦"
           image={ProfilingRafiki}
-          description="We recommend courier partners tailored to your delivery needs, improving shipping efficiency."
+          description="We prioritize long-term fit and retention through rigorous screening, engagement, and career alignment strategies"
         />
         <Card
-          title="Sync & Import Orders"
+          title="Driven by values"
           icon="🛠️"
           image={ProfilingRafiki}
-          description="Integrate and import orders with a single click, enhancing automation and productivity."
+          description="Integrity, transparency, and accountability are at the core of everything we do — both with clients and candidates."
         />
       </div>
     </div>
