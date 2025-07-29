@@ -32,12 +32,13 @@ const HeroSection = () => {
         className="md:w-1/2"
       >
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-          Building careers. <br /> Building organisations.
+          About Albireo Recruiters. <br /> At Albireo Recruiters.
         </h1>
+        {/* <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+           Building careers. <br /> Building organisations.
+        </h1> */}
         <p className="text-lg text-gray-700 mb-8">
-          ABC Consultants is India's leading executive search and talent
-          advisory firm, proudly shaping the future of multinationals and Indian
-          businesses for over 50 years
+          We are a premier recruitment agency committed to delivering high-quality talent solutions to Tier 1 organizations across India. Established in 2017, we specialize in identifying, engaging, and placing top-tier professionals across key industries, including Technology, BFSI, Consulting, VLSI, and Shared Services.
         </p>
         {/*
         <div className="flex items-center gap-4">

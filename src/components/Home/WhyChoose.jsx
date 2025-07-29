@@ -1,6 +1,8 @@
 import React from "react";
 import Card from"../../pages/Card" // Assuming you have a Card component for displaying each feature
 import AlbireoLogo from "../../assets/AlbireoLogo.png" // Replace with your actual image
+import ProfilingRafiki from "../../assets/ProfilingRafiki.png"; // Replace with your actual image
+import ResumeAmico from "../../assets/ResumeAmico.png"; // Replace with your actual image
 
 function WhyChooseUs() {
   return (
@@ -14,37 +16,37 @@ function WhyChooseUs() {
         <Card
           title="Weight Discrepancy"
           icon="⚖️"
-          image={AlbireoLogo}
+          image={ProfilingRafiki}
           description="Resolve disputes effortlessly with our unique Weight Discrepancy Model. Say goodbye to the hassle – address weight-related issues easily."
         />
         <Card
           title="Courier Partner Recommendation"
           icon="📦"
-          image={AlbireoLogo}
+          image={ResumeAmico}
           description="We recommend courier partners tailored to your delivery needs, improving shipping efficiency."
         />
         <Card
           title="Sync & Import Orders"
           icon="🛠️"
-          image={AlbireoLogo}
+          image={ProfilingRafiki}
           description="Integrate and import orders with a single click, enhancing automation and productivity."
         />
         <Card
           title="Weight Discrepancy"
           icon="⚖️"
-          image={AlbireoLogo}
+          image={ProfilingRafiki}
           description="Resolve disputes effortlessly with our unique Weight Discrepancy Model. Say goodbye to the hassle – address weight-related issues easily."
         />
         <Card
           title="Courier Partner Recommendation"
           icon="📦"
-          image={AlbireoLogo}
+          image={ProfilingRafiki}
           description="We recommend courier partners tailored to your delivery needs, improving shipping efficiency."
         />
         <Card
           title="Sync & Import Orders"
           icon="🛠️"
-          image={AlbireoLogo}
+          image={ProfilingRafiki}
           description="Integrate and import orders with a single click, enhancing automation and productivity."
         />
       </div>

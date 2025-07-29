@@ -15,9 +15,9 @@ const Card = ({ title, description, image, icon }) => {
             <img
               src={image}
               alt={title}
-              className="w-56 h-56 object-contain"
+              className="w-65 h-65 object-contain"
             />
-            <h2 className="text-xl font-semibold mt-4 text-center text-black">
+            <h2 className="text-xl font-semibold text-center text-black">
               {title}
             </h2>
           </>
