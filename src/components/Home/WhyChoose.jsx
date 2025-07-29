@@ -3,6 +3,7 @@ import Card from"../../pages/Card" // Assuming you have a Card component for dis
 import AlbireoLogo from "../../assets/AlbireoLogo.png" // Replace with your actual image
 import ProfilingRafiki from "../../assets/ProfilingRafiki.png"; // Replace with your actual image
 import ResumeAmico from "../../assets/ResumeAmico.png"; // Replace with your actual image
+import BusinessDeal from "../../assets/BusinessDeal.png"; // Replace with your actual image
 
 function WhyChooseUs() {
   return (
@@ -16,7 +17,7 @@ function WhyChooseUs() {
         <Card
           title="Trusted by Tier 1 Companies"
           icon="⚖️"
-          image={ProfilingRafiki}
+          image={BusinessDeal}
           description="We’ve built long-term partnerships with top enterprises across India by consistently delivering high-quality talent across industries."
         />
         <Card
