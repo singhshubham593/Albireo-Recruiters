@@ -1,98 +1,27 @@
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import Albireo from "../../assets/AlbireoLogo.png"; // Replace with your actual image
-import { ArrowRight } from "lucide-react";
+import React from 'react'
+import HeroSection from './HeroSection'
+import JobMatcher from './JobMatcher'
+import CallToAction from './CallToAction'
+import WhyChooseUs from './WhyChoose'
+import TeamSection from './TeamMember'
+import Review from './Review'
+import Clients from './Clients'
+import Contact from './Contact'
 
-const HeroSection = () => {
-  const images = [
-    "/assets/Home1.jpg", // This image path should be relative to your public folder so put it in public/assets folder
-    "/assets/Home2.jpg",
-    "/assets/Home3.jpg",
-    "/assets/Home4.jpg",
-    "/assets/Home5.jpg",
-  ];
 
-  const [currentImage, setCurrentImage] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 2000); // Change image every 2 seconds
-
-    return () => clearInterval(interval);
-  }, [images.length]);
-
+const Home = () => {
   return (
-    <section className="flex flex-col md:flex-row items-center justify-between gap-8 lg:mt-10 mb-5 px-6 md:px-20 py-12 bg-white">
-      {/* Left Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-        className="md:w-1/2"
-      >
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-          Building careers. <br /> Building organisations.
-        </h1>
-        <p className="text-lg text-gray-700 mb-8">
-          ABC Consultants is India's leading executive search and talent
-          advisory firm, proudly shaping the future of multinationals and Indian
-          businesses for over 50 years
-        </p>
-        {/*
-        <div className="flex items-center gap-4">
-          <button className="inline-flex items-center gap-3 px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 bg-gradient-to-r from-yellow-400 to-blue-600 text-black font-semibold rounded-full text-sm sm:text-base md:text-lg shadow-md hover:scale-105 transition transform duration-300">
-            Get In Touch
-            <span className="bg-black text-white rounded-full p-1 sm:p-2">
-              <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
-            </span>
-          </button>
+    <>
+      <HeroSection />
+      <JobMatcher />
+      <CallToAction />
+      <WhyChooseUs />
+      <TeamSection />
+      <Review />
+      <Clients />
+      <Contact />
+    </>
+  )
+}
 
-          <div className="flex gap-4 ml-4">
-            <a href="#">
-              <img src={Albireo} alt="LinkedIn" className="w-6 h-6" />
-            </a>
-            <a href="#">
-              <img src={Albireo} alt="Facebook" className="w-6 h-6" />
-            </a>
-            <a href="#">
-              <img src={Albireo} alt="Instagram" className="w-6 h-6" />
-            </a>
-            <a href="#">
-              <img src={Albireo} alt="Glassdoor" className="w-6 h-6" />
-            </a>
-          </div>
-        </div>
-        */}
-      </motion.div>
-
-      {/* Right Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-        className="md:w-1/2 flex flex-col items-center "
-      >
-        <div className="bg-gradient-to-br from-gray-100 via-blue-100 to-yellow-600 rounded-2xl overflow-hidden shadow-lg w-full max-w-md">
-          <img
-            src={images[currentImage]}
-            alt={`Slide ${currentImage + 1}`}
-            className="h-80 w-140 object-cover rounded-lg transition-all duration-500 -translate-4"
-          />
-        </div>
-        <div className="flex gap-2 mt-4">
-          {images.map((_, i) => (
-            <div
-              key={i}
-              className={`w-2 h-2 rounded-full ${
-                i === currentImage ? "bg-gray-800" : "bg-gray-300"
-              }`}
-            />
-          ))}
-        </div>
-      </motion.div>
-    </section>
-  );
-};
-
-export default HeroSection;
+export default Home

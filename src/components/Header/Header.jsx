@@ -130,7 +130,7 @@ export default function Header() {
     const hoverKey = hoverSection[tab] || left[0];
 
     return (
-      <div className="absolute top-full left-0 w-full flex flex-col lg:flex-row bg-white border-t z-50 shadow-xl rounded-b-lg">
+      <div className="absolute top-full left-0 lg:mx-50  flex flex-col lg:flex-row bg-white border-t z-50 shadow-xl rounded-b-lg">
         {/* Left Image Section */}
         <div className="w-full lg:w-[280px] p-4 border-b lg:border-b-0 lg:border-r">
           <img

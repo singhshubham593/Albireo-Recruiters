@@ -1,6 +1,6 @@
 import React from "react";
-import Card from "../pages/Card"; // Assuming you have a Card component for displaying each feature
-import AlbireoLogo from "../assets/AlbireoLogo.png"; // Replace with your actual image
+import Card from"../../pages/Card" // Assuming you have a Card component for displaying each feature
+import AlbireoLogo from "../../assets/AlbireoLogo.png" // Replace with your actual image
 
 function WhyChooseUs() {
   return (
