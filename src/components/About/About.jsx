@@ -6,8 +6,8 @@ const About = () => {
   return (
     <section className="bg-gradient-to-br from-blue-50 to-yellow-50 text-black">
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-        <div>
+      <div className="max-w-7xl mx-auto px-6 py-20 lg:px-3 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div className="lg:px-10">
           <h1 className="text-4xl md:text-5xl font-bold text-black mb-6">
             About <span className="text-yellow-500">Albireo Recruiters</span>
           </h1>
@@ -21,7 +21,7 @@ const About = () => {
             Our mission is simple — <em>connecting exceptional talent with world-class companies</em>.
           </p>
         </div>
-        <div>
+        <div className="mx-12">
           <img
             src={AlbireoLogo}
             alt="Recruitment Team"
