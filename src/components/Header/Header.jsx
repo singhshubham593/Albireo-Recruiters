@@ -1,7 +1,25 @@
 import { useState } from "react";
 import { Bell, Menu, X } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 const NAV = {
+  Home: {
+    left: ["Customer Support", "Press", "Offices"],
+    right: {
+      "Customer Support": {
+        Help: ["FAQs", "Submit a Request"],
+        Channels: ["Chat", "Email", "Phone"]
+      },
+      Press: {
+        News: ["Latest Press", "Media Kit"],
+        Contact: ["PR Team"]
+      },
+      Offices: {
+        Locations: ["India", "USA", "UK"],
+        Details: ["Maps", "Hours"]
+      }
+    }
+  },
   JobSeekers: {
     left: ["Find a Job", "Contract or Temp Jobs", "Career Advice"],
     right: {
@@ -79,23 +97,7 @@ const NAV = {
       }
     }
   },
-  Contact: {
-    left: ["Customer Support", "Press", "Offices"],
-    right: {
-      "Customer Support": {
-        Help: ["FAQs", "Submit a Request"],
-        Channels: ["Chat", "Email", "Phone"]
-      },
-      Press: {
-        News: ["Latest Press", "Media Kit"],
-        Contact: ["PR Team"]
-      },
-      Offices: {
-        Locations: ["India", "USA", "UK"],
-        Details: ["Maps", "Hours"]
-      }
-    }
-  },
+   
   Partner: {
     left: ["Why Partner", "Affiliate", "Agencies"],
     right: {
@@ -156,7 +158,8 @@ export default function Header() {
         {/* Desktop Nav */}
         <nav className="hidden md:flex gap-6 font-medium text-sm  sm:relative lg:static ">
           {menuItems.map((tab) => (
-            <div
+            <NavLink 
+              to={`/${tab}`}
               key={tab}
               className=""
               onMouseEnter={() => setActiveTab(tab)}
@@ -221,7 +224,7 @@ export default function Header() {
                   
                 </div>
               )}
-            </div>
+            </NavLink>
           ))}
         </nav>
 
@@ -251,9 +254,9 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="md:hidden px-4 pb-4 bg-white border-t shadow-lg rounded-b-lg min-h-screen">
           {menuItems.map((tab) => (
-            <div key={tab} className="py-2 border-b">
+            <NavLink  to={`/${tab}`} key={tab} className="py-2 border-b">
               <button
-                className="w-full text-left font-semibold text-gray-800"
+                className="w-full text-left pt-3 font-semibold text-gray-800"
                 onClick={() =>
                   setMobileDropdown(mobileDropdown === tab ? null : tab)
                 }
@@ -283,7 +286,7 @@ export default function Header() {
                   ))}
                 </div>
               )}
-            </div>
+            </NavLink>
           ))}
         </div>
       )}

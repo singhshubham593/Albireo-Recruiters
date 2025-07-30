@@ -7,11 +7,12 @@ import TeamSection from './TeamMember'
 import Review from './Review'
 import Clients from './Clients'
 import Contact from './Contact'
+import { Link } from 'react-router-dom'
 
 
 const Home = () => {
   return (
-    <>
+    <Link to="/Home" className="home-link">
       <HeroSection />
       <JobMatcher />
       <CallToAction />
@@ -20,7 +21,7 @@ const Home = () => {
       <Review />
       <Clients />
       <Contact />
-    </>
+    </Link>
   )
 }
 

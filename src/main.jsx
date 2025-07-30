@@ -7,14 +7,21 @@ import { createRoutesFromElements } from 'react-router-dom'
 import Home from './components/Home/Home.jsx'
 import JobSeekers from './components/JobSeekers/JobSeekers.jsx'
 import Employers from './components/Employers/Employers.jsx'
+import About from './components/About/About.jsx'
+import Contact from './components/Contact/Contact.jsx'
+import Partner from './components/Partner/Partner.jsx'
  
 
 const router = createBrowserRouter(
   createRoutesFromElements(
      <Route path='/' element={<Layout />}>
       <Route index element={<Home />} />
-      <Route path='jobSeekers' element={<JobSeekers />} />
-      <Route path='employers' element={<Employers />} />
+      <Route path='Home' element={<Home />} />
+      <Route path='JobSeekers' element={<JobSeekers />} />
+      <Route path='Employers' element={<Employers />} />
+      <Route path='About' element={<About />} />
+      <Route path='Contact' element={<Contact />} />
+      <Route path='Partner' element={<Partner />} />
     </Route>
   )
 )
