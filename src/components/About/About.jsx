@@ -1,9 +1,10 @@
-import React from "react";
+ import React from "react";
 import AlbireoLogo from "../../assets/AlbireoLogo.png"; // Replace with your actual image
+import Contact from "../Home/Contact"; // Importing Contact component
 
 const About = () => {
   return (
-    <section className=" bg-gradient-to-br from-blue-50 to-yellow-50 text-black">
+    <section className="bg-gradient-to-br from-blue-50 to-yellow-50 text-black">
       {/* Hero Section */}
       <div className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div>
@@ -24,23 +25,23 @@ const About = () => {
           <img
             src={AlbireoLogo}
             alt="Recruitment Team"
-            className="rounded-3xl shadow-xl object-cover"
+            className="rounded-3xl shadow-xl mx-auto object-cover"
           />
         </div>
       </div>
 
       {/* Stats Section */}
-      <div className="bg-black py-12">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 text-center text-white">
+      <div className="bg-gradient-to-t from-yellow-400 via-yellow-100 via-blue-300 to-blue-400 py-16 lg:px-15 md:px-10 sm:px-6 px-5">
+        <div className="lg:max-w-6xl md:max-w-xl sm:max-w-lg mx-auto grid grid-cols-2 md:grid-cols-4  gap-6 text-center text-white">
           {[
             { number: "500+", label: "Successful Placements" },
             { number: "50+", label: "Tier-1 Clients" },
             { number: "7+", label: "Years of Excellence" },
             { number: "15+", label: "Expert Recruiters" },
           ].map((item, index) => (
-            <div key={index}>
-              <h3 className="text-3xl font-bold text-yellow-400">{item.number}</h3>
-              <p className="mt-2 text-sm text-gray-300">{item.label}</p>
+            <div key={index} className="bg-black/30 p-6 rounded-xl shadow-lg">
+              <h3 className="text-3xl font-bold text-yellow-300">{item.number}</h3>
+              <p className="mt-2 text-sm text-gray-100">{item.label}</p>
             </div>
           ))}
         </div>
@@ -76,17 +77,8 @@ const About = () => {
           ))}
         </div>
       </div>
-
       {/* CTA Section */}
-      <div className="py-20 bg-yellow-100 text-center">
-        <h2 className="text-3xl font-bold mb-4 text-black">
-          Looking to Hire Top Talent?
-        </h2>
-        <p className="text-gray-700 mb-6">Let Albireo Recruiters help you find the right professionals for your business.</p>
-        <button className="bg-black text-white px-6 py-3 rounded-full hover:bg-blue-600 transition duration-300">
-          Get in Touch
-        </button>
-      </div>
+      <Contact />
     </section>
   );
 };
