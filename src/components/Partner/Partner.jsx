@@ -1,10 +1,9 @@
 import React from 'react'
+import UnderDevelopment from '../../pages/UnderDevelopment'
 
 const Partner = () => {
   return (
-    <div>
-      <h1>Hello Partners</h1>
-    </div>
+    <UnderDevelopment />
   )
 }
 

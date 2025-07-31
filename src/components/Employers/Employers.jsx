@@ -1,10 +1,9 @@
 import React from 'react'
+import UnderDevelopment from '../../pages/UnderDevelopment.jsx'
 
 const Employers = () => {
   return (
-    <div>
-      <h1>Hello Employers</h1>
-    </div>
+     <UnderDevelopment />
   )
 }
 

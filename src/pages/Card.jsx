@@ -23,12 +23,12 @@ const Card = ({ title, description, image, icon }) => {
           </>
         ) : (
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-yellow-400 text-white flex flex-col justify-center items-start p-6 animate-slide-up rounded-2xl">
-            <div className="text-3xl mb-4">{icon}</div>
-            <h2 className="text-2xl  font-bold mb-2">{title}</h2>
+            <div className="text-3xl mb-4 mx-auto">{icon}</div>
+            <h2 className="text-2xl  font-bold mb-2 mx-auto">{title}</h2>
             <p className="text-sm opacity-90 mb-4">{description}</p>
-            <a href="#" className="text-white font-bold underline">
+            {/* <a href="#" className="text-white font-bold underline">
               READ MORE
-            </a>
+            </a> */}
           </div>
         )}
       </div>

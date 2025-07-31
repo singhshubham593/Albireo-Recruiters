@@ -15,7 +15,7 @@ export default function JobMatchSection() {
         <div className="text-center md:text-left flex-1 space-y-2">
           <h2 className="text-3xl font-extrabold text-gray-900">Job Match</h2>
           <p className="text-gray-600 text-base">
-            Try our smart new tool to find your perfect job. It’s simple, fast and accurate!
+            Try our tool to find your perfect job. It’s simple, fast and accurate!
           </p>
         </div>
 

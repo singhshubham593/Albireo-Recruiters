@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import Button from "../../pages/Button.jsx";
 
 const Contact = () => {
   return (
@@ -12,15 +13,16 @@ const Contact = () => {
       <div className="relative z-10 max-w-4xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-snug mb-8">
           Strengthen your Human Resource <br /> Strategy with{" "}
-          <span className="text-blue-700">Alberio</span>
+          <span className="text-blue-700">Albireo</span>
         </h2>
-
-        <button className="inline-flex items-center gap-4 px-6 py-3 sm:px-6 sm:py-3 md:px-8 md:py-4 bg-gradient-to-r from-yellow-400 to-blue-400 text-black font-semibold rounded-full text-sm sm:text-base md:text-lg shadow-md hover:scale-105 transition transform duration-300">
-          Get In Touch
-          <span className="bg-black text-white rounded-full p-1 sm:p-2">
-            <ArrowRight className="h-5 w-5" />
-          </span>
-        </button>
+        {/* 
+      <button className="inline-flex items-center gap-4 px-6 py-3 sm:px-6 sm:py-3 md:px-8 md:py-4 bg-gradient-to-r from-yellow-400 to-blue-400 text-black font-semibold rounded-full text-sm sm:text-base md:text-lg shadow-md hover:scale-105 transition transform duration-300">
+        Get In Touch
+        <span className="bg-black text-white rounded-full p-1 sm:p-2">
+          <ArrowRight className="h-5 w-5" />
+        </span>
+      </button> */}
+        <Button type="Get In Touch" />
       </div>
     </div>
   );

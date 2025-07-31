@@ -4,19 +4,19 @@ import { NavLink } from "react-router-dom";
 
 const NAV = {
   Home: {
-    left: ["Customer Support", "Press", "Offices"],
+    left: ["Quick View", "Connection", "Explore"],
     right: {
-      "Customer Support": {
-        Help: ["FAQs", "Submit a Request"],
-        Channels: ["Chat", "Email", "Phone"]
+      "Quick View": {
+        View: ["Hero Page", "Why Choose Us"],
+        Cantact: ["Chat", "Email", "Phone"]
       },
-      Press: {
-        News: ["Latest Press", "Media Kit"],
-        Contact: ["PR Team"]
+      Connection: {
+        Option: ["Job Match", "Today Choose"],
+        Connect: ["HR Strategy"]
       },
-      Offices: {
-        Locations: ["India", "USA", "UK"],
-        Details: ["Maps", "Hours"]
+      Explore: {
+        Team: ["Our People"],
+        Details: ["Client", "Client Review"]
       }
     }
   },
@@ -158,6 +158,7 @@ export default function Header() {
         {/* Desktop Nav */}
         <nav className="hidden md:flex gap-6 font-medium text-sm  sm:relative lg:static ">
           {menuItems.map((tab) => (
+            
             <NavLink 
               to={`/${tab}`}
               key={tab}
@@ -173,7 +174,13 @@ export default function Header() {
               </span>
 
               {activeTab === tab && (
-                <div className="absolute top-full left-0 lg:mx-50  flex flex-col lg:flex-row bg-white shadow-xl z-50 rounded-b-md">
+                <div className="absolute top-full left-0 lg:mx-50  flex flex-col lg:flex-row bg-white shadow-xl z-50 rounded-b-md"
+                  onMouseEnter={() => setActiveTab(tab)}
+             onMouseLeave={() => {
+               setActiveTab(null);
+               setHoverSection({});
+             }}
+                >
                     {/* Image */}
                     <div className="w-full lg:w-[280px] p-4 border-b lg:border-b-0 lg:border-r">
                       <img
@@ -181,7 +188,7 @@ export default function Header() {
                         alt="sidebar"
                         className="rounded-md w-full h-[150px] object-cover"
                       />
-                      <div className="font-semibold text-sm mt-3 mb-1">Start your search</div>
+                      <div className="font-semibold text-sm mt-3 mb-1">Hello</div>
                       <p className="text-sm text-gray-600 mb-3">
                         Browse content and discover opportunities.
                       </p>
