@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Bell, Menu, X } from "lucide-react";
-import { NavLink } from "react-router-dom";
+import { NavLink,Link } from "react-router-dom";
 
 const NAV = {
   Home: {
@@ -151,9 +151,9 @@ export default function Header() {
     <header className="bg-white shadow-md sticky top-0 z-50 lg:mx-15 md:mx-10 mx-3  lg:mt-8 mt-5 z-50 rounded-lg">
       <div className="max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
-        <div className="font-bold text-black md:text-lg cursor-pointer">
+        <Link t0="/Home" className="font-bold text-black md:text-lg cursor-pointer">
           Albireo Recruiters
-        </div>
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex gap-6 font-medium text-sm  sm:relative lg:static ">
