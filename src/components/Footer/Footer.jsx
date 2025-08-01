@@ -27,7 +27,7 @@ const footerData = {
     Jobs: ["Browse Jobs", "Submit your CV"],
   },
   socialIcons: [
-    { icon: <FaLinkedin />, link: "#" },
+    { icon: <FaLinkedin />, link: "https://www.linkedin.com/company/albireo-recruiters/posts/?feedView=all" },
     { icon: <FaFacebookF />, link: "#" },
     { icon: <FaInstagram />, link: "#" },
     { icon: <FaGlassCheers />, link: "#" }, // Placeholder for Glassdoor

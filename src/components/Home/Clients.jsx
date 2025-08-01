@@ -6,15 +6,15 @@ const clients = [
   { name: "Accenture", logo: "https://logo.clearbit.com/accenture.com", color: "bg-yellow-400" },
   { name: "Wipro", logo: "https://logo.clearbit.com/wipro.com", color: "bg-blue-400" },
   { name: "Adobe", logo: "https://logo.clearbit.com/adobe.com", color: "bg-black" },
-  { name: "Calens", logo: "https://logo.clearbit.com/calendar.com", color: "bg-gradient-to-br from-purple-500 to-orange-400" },
-  { name: "Taskus", logo: "https://logo.clearbit.com/taskus.com", color: "bg-blue-400" },
-  { name: "Teleperformance", logo: "https://logo.clearbit.com/teleperformance.com", color: "bg-black" },
+  { name: "Calance", logo: "https://logo.clearbit.com/calance.com", color: "bg-gradient-to-br from-purple-500 to-orange-400" },
+  { name: "TaskUs", logo: "https://img.logo.dev/taskus.com?token=pk_U0ZE7b2TQ8epysPhQMxelw", color: "bg-blue-400" },
+  { name: "Teleperformance", logo: "https://img.logo.dev/teleperformance.com?token=pk_U0ZE7b2TQ8epysPhQMxelw", color: "bg-black" },
   { name: "NTT Data", logo: "https://logo.clearbit.com/nttdata.com", color: "bg-gradient-to-br from-purple-500 to-orange-400" },
   { name: "Rockwell", logo: "https://logo.clearbit.com/rockwellautomation.com", color: "bg-blue-300" },
   { name: "PayTM", logo: "https://logo.clearbit.com/paytm.com", color: "bg-black" },
   { name: "AirBNB", logo: "https://logo.clearbit.com/airbnb.com", color: "bg-gradient-to-br from-purple-500 to-orange-400" },
   { name: "Birdeye", logo: "https://logo.clearbit.com/birdeye.com", color: "bg-blue-700" },
-  { name: "Fujitsu", logo: "https://logo.clearbit.com/fujitsu.com", color: "bg-black" },
+  { name: "Fujitsu", logo: "https://img.logo.dev/fujitsu.com?token=pk_U0ZE7b2TQ8epysPhQMxelw", color: "bg-black" },
 ];
 
 // Create two identical rows side by side

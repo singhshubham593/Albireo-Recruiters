@@ -84,7 +84,8 @@ const Review = () => {
                   }`}
                 />
               ))}
-              <span className="text-blue-700 font-semibold">
+              <h1 className="text-blue-500 ml-3 font-semibold">Customer Review :</h1>
+              <span className="text-blue-700 font-bold">
               {activeClient.name}
             </span>
             </div>
