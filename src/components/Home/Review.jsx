@@ -2,29 +2,28 @@ import React, { useEffect, useState } from "react";
 import CustomeFeedback from "../../assets/CustomerFeedack.png";
 
 const clients = [
-  {
-    review:
-      "We are a Denmark based company and expanding international operations. Thanks to Recruiting Hub who made our hiring process smooth and fast.",
+   {
+    name: "SaaS Industry",
+    review:"Albireo really understood what we needed. They found great people for our sales and customer support teams—quickly and without much back and forth. The process was clear, simple, and saved us a lot of time.",
     logo: CustomeFeedback,
   },
   {
-    review:
-      "Recruiting Hub helped us scale our team across multiple locations with precision and speed. Highly professional!",
+    name: "Management Consulting",
+    review:"Recruiting Hub helped us scale our team across multiple locations with precision and speed. Highly professional!We were looking for the right kind of people who could fit into our high-pressure and fast-moving work environment. Albireo took the time to understand that and helped us hire professionals who got what we do from day one. CustomeFeedback."
+  },
+  {
+    name: "Banking and Finance",
+    review:"Hiring in the finance space can be tricky, but Albireo made it easy. They shared strong profiles that matched both our role and compliance needs. Their support throughout the process was solid and reliable.",
     logo: CustomeFeedback,
   },
   {
-    review:
-      "A fantastic partner in talent acquisition. Recruiting Hub understands our needs and delivers quality profiles every time.",
+    name: "Technology",
+    review:"Finding good tech talent is always tough, especially when you need to scale fast. Albireo helped us fill key roles quickly, and the candidates were all skilled and easy to work with. The whole hiring cycle was handled smoothly. ",
     logo: CustomeFeedback,
   },
   {
-    review:
-      "Recruiting Hub played a crucial role in scaling our tech and support teams. Their reach and service is excellent.",
-    logo: CustomeFeedback,
-  },
-  {
-    review:
-      "As a leading bank in the UAE, we value partners who deliver results fast — and Recruiting Hub has exceeded expectations.",
+    name: "BPO Industry",
+    review:"For us, keeping up with hiring needs in a fast-paced setup is tough. Albireo understood the urgency and delivered candidates who were ready to hit the ground running. Their team stayed in touch and made things simple from the first call.",
     logo: CustomeFeedback,
   }
   //,
@@ -85,7 +84,11 @@ const Review = () => {
                   }`}
                 />
               ))}
+              <span className="text-blue-700 font-semibold">
+              {activeClient.name}
+            </span>
             </div>
+             
           </div>
         </div>
 
@@ -97,7 +100,10 @@ const Review = () => {
               <div
                 key={idx}
                 className="relative rounded-xl shadow-md p-4 overflow-hidden bg-white"
-              >
+              > 
+                <span className="text-sm font-semibold text-gray-900">
+                    {client.name}
+                  </span>
                 {/* Gradient Backdrop */}
                 <div className="absolute  w-40 h-40 bg-gradient-to-t from-blue-600 via-blue-300 via-yellow-100 to-yellow-500 blur-2xl opacity-100 z-0"></div>
                 <div className="absolute -bottom-25 -right-5 w-40 h-40 bg-gradient-to-br from-yellow-600 via-blue-400 to-blue-600 blur-2xl opacity-100 z-0"></div>
