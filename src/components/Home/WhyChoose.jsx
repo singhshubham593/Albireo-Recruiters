@@ -15,7 +15,7 @@ function WhyChooseUs() {
       <div className="text-center mb-12">
         <h1 className="text-4xl sm:text-6xl font-extrabold text-blue-200 uppercase">Why Choose Us?</h1>
         <h2 className="text-2xl sm:text-3xl font-bold text-blue-700 mt-2">Why Choose Us?</h2>
-        <p className=" text-md sm:text-lg text-black font-semibold mt-2">Great Clients across the world</p>
+        <p className=" text-md sm:text-lg text-black font-semibold mt-2">Great Clients across the India</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch justify-items-center">
         <Card
