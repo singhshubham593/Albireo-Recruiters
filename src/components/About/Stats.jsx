@@ -8,7 +8,7 @@ const Stats = () => {
             { number: "50000+", label: "Successful Placements" },
             { number: "30+", label: "Tier-1 Clients" },
             { number: "8+", label: "Years of Excellence" },
-            { number: "30+", label: "Expert Recruiters" },
+            { number: "50+", label: "Expert Recruiters" },
           ].map((item, index) => (
             <div key={index} className="bg-black/30 p-6 rounded-xl shadow-lg">
               <h3 className="text-3xl font-bold text-yellow-300">{item.number}</h3>
