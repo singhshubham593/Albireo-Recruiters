@@ -53,7 +53,7 @@ const Review = () => {
           Client Reviews
         </h2>
         <p className="text-gray-600 text-md md:text-lg">
-          Here's what our clients are saying about Recruiting Hub. We are proud
+          Here's what our clients are saying about Albireo Recruiters. We are proud
           to help companies grow by delivering top talent with precision and speed.
         </p>
       </div>
