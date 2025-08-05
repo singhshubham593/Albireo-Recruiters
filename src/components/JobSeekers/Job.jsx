@@ -31,6 +31,33 @@ const jobs = [
       'High-performing tech team'
     ],
     remote: true
+  },{
+    id: 3,
+    title: 'VP Information Technology in MNC Pharma company',
+    location: 'Mumbai',
+    contractType: 'Permanent',
+    salary: 'INR9,000,000 - INR11,000,000 per year',
+    description:
+      'The IT role is crucial for enabling productivity across Production, Sales, and Distribution.',
+    bullets: [
+      'Drive tech enablement',
+      'Double topline in 5 years'
+    ],
+    remote: false
+  },
+  {
+    id: 4,
+    title: 'VP Information Technology in MNC Pharma company',
+    location: 'Mumbai',
+    contractType: 'Permanent',
+    salary: 'INR9,000,000 - INR11,000,000 per year',
+    description:
+      'The IT role is crucial for enabling productivity across Production, Sales, and Distribution.',
+    bullets: [
+      'Drive tech enablement',
+      'Double topline in 5 years'
+    ],
+    remote: false
   }
 ];
 
@@ -121,7 +148,7 @@ export default function App() {
         <Button type={"Create job alert"} />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-6">
+      <div className="grid grid-cols-1  md:grid-cols-4 gap-6 mt-6">
         <div className="col-span-1 bg-white p-4 rounded-md shadow-sm">
           <div className="flex justify-between items-center mb-2">
             <h3 className="text-lg font-semibold">Filter</h3>
