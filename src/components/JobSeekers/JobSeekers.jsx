@@ -2,10 +2,14 @@
 import React, { useState } from "react";
 import JobButton from "../../pages/JobButton.jsx";
 import UnderDevelopment from "../../pages/UnderDevelopment.jsx";
+import Job from "./Job.jsx";
 
 const JobSeekers = () => {
   return(
-    <UnderDevelopment />
+    <>
+    <Job />
+    {/* <UnderDevelopment /> */}
+    </>
   )
   // const [showMobileFilter, setShowMobileFilter] = useState(false);
   // const [jobs] = useState([
