@@ -117,7 +117,7 @@ export default function App() {
   });
 
   return (
-    <div className="min-h-screen bg-gray-50 p-4">
+    <div className=" bg-gray-50 p-4">
       {/* Top Search Bar */}
       <div className="bg-white p-4 rounded-md flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
         <div className="flex flex-1 gap-2 w-full flex-col md:flex-row">
@@ -149,7 +149,7 @@ export default function App() {
       </div>
 
       <div className="grid grid-cols-1  md:grid-cols-4 gap-6 mt-6">
-        <div className="col-span-1 bg-white p-4 rounded-md shadow-sm">
+        <div className="col-span-1 h-110 bg-white p-4 rounded-md shadow-sm">
           <div className="flex justify-between items-center mb-2">
             <h3 className="text-lg font-semibold">Filter</h3>
             <button onClick={resetFilters} className="text-sm text-blue-600">Reset</button>
