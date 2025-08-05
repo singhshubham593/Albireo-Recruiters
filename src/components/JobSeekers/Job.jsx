@@ -1,5 +1,7 @@
  import React, { useState } from 'react';
 import { ChevronDown, ChevronRight } from 'lucide-react';
+import JobButton from '../../pages/JobButton';
+import Button from '../../pages/Button';
 
 const jobs = [
   {
@@ -108,14 +110,15 @@ export default function App() {
           />
           <button
             onClick={() => setSearchClicked(true)}
-            className="px-6 py-2 bg-blue-600 text-white rounded-full"
+            className="px-6 py-2 bg-gradient-to-r from-yellow-400 to-blue-400 text-black font-semibold rounded-full text-sm sm:text-base md:text-lg shadow-md hover:scale-105 transition transform duration-300"
           >
             Search
           </button>
         </div>
-        <button className="px-4 py-2 rounded-full border border-blue-600 text-blue-600 hover:bg-blue-50">
+        {/* <button className="px-4 py-2 rounded-full border border-blue-600 text-blue-600 hover:bg-blue-50">
           Create Job Alert
-        </button>
+        </button> */}
+        <Button type={"Create job alert"} />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-6">
@@ -177,7 +180,7 @@ export default function App() {
           </FilterSection>
           <button
             onClick={applyFilters}
-            className="mt-4 w-full border border-blue-600 text-blue-600 py-2 rounded-full hover:bg-blue-50"
+            className="mt-4 py-3 w-full bg-gradient-to-r from-yellow-400 to-blue-400 text-black font-semibold rounded-full text-sm sm:text-base md:text-lg shadow-md hover:scale-105 transition transform duration-300"
           >
             Apply Filters
           </button>
@@ -212,9 +215,12 @@ export default function App() {
                 ))}
               </ul>
               <div className="flex gap-3">
-                <button className="border border-blue-600 text-blue-600 px-4 py-2 rounded-full hover:bg-blue-50">Save Job</button>
-                <button className="border border-green-600 text-green-600 px-4 py-2 rounded-full hover:bg-green-50">Refer</button>
-                <button className="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700">View Job →</button>
+                {/* <button className="border border-blue-600 text-blue-600 px-4 py-2 rounded-full hover:bg-blue-50">Save Job</button> */}
+                <Button type={"Save"} />
+                <JobButton type={"Refer"} />
+                <JobButton type={"Apply"} />
+                {/* <button className="border border-green-600 text-green-600 px-4 py-2 rounded-full hover:bg-green-50">Refer</button> */}
+                {/* <button className="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700">View Job →</button> */}
               </div>
             </div>
           ))}
