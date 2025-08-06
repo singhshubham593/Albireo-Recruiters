@@ -1,32 +1,104 @@
  import React from "react";
 import { motion } from "framer-motion";
+import Siddharth from "../../assets/siddharth.jpg";
+import Honey from "../../assets/honeySahani.jpg";
+import AarohiSharma from "../../assets/aarohiSharma.jpg";
+import Arnapurna from "../../assets/arnapurna.jpg";
+import Chiranjeev from "../../assets/chiranjeev.jpg";
+import Hansika from "../../assets/Hansika.jpg";
+import JaganmohanSharma from "../../assets/jagmohanSharma.jpg";
+import MonikaSharma from "../../assets/monikaSharma.jpg";
+import NancyChawla from "../../assets/NancyChawla.jpg";
+import Rohit from "../../assets/rohit.jpg";
+import Sangmitra from "../../assets/sangmitra.jpg";
+import BhavnaTyagi from "../../assets/BhavnaTyagi.jpg";
+import VandniTyagi from "../../assets/VandniTyagi.jpg";
+import Divya from "../../assets/Divya.jpg";
+import princyGupta from "../../assets/PrincyGupta.jpg";
+import Swati from "../../assets/Swati.jpg";
 
 const people = [
   {
-    name: "Amit Sharma",
-    role: "Chief Executive Officer",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
+    name: "Siddharth Suneja",
+    role: "Founder & CEO",
+    image: Siddharth,
   },
   {
-    name: "Priya Verma",
+    name: "Honey Sahani",
     role: "Chief Technology Officer",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    image:  Honey,
   },
   {
-    name: "Raj Malhotra",
+    name: "Chiranjeev Singh",
     role: "Lead Designer",
-    image: "https://randomuser.me/api/portraits/men/75.jpg",
+    image:  Chiranjeev,
   },
   {
-    name: "Sneha Iyer",
+    name: "Aarohi Sharma",
     role: "Product Manager",
-    image: "https://randomuser.me/api/portraits/women/66.jpg",
+    image:  AarohiSharma,
+  },
+  {
+    name: "Arnapurna Patra",
+    role: "Marketing Head",
+    image:  Arnapurna,
+  },
+  {
+    name: "Hansika",
+    role: "Marketing Head",
+    image: Hansika ,
+  },
+  {
+    name: "Jaganmohan Sharma",
+    role: "Marketing Head",
+    image:  JaganmohanSharma,
+  },
+  {
+    name: "Monika Sharma",
+    role: "Marketing Head",
+    image:  MonikaSharma,
   },
   {
     name: "Vikram Mehra",
     role: "Marketing Head",
-    image: "https://randomuser.me/api/portraits/men/51.jpg",
+    image:  NancyChawla,
   },
+  {
+    name: "Vikram Mehra",
+    role: "Marketing Head",
+    image:  Rohit,
+  },
+  {
+    name: "Vikram Mehra",
+    role: "Marketing Head",
+    image:  Sangmitra,
+  },
+  {
+    name: "Vikram Mehra",
+    role: "Marketing Head",
+    image:  BhavnaTyagi,
+  },
+  {
+    name: "Vikram Mehra",
+    role: "Marketing Head",
+    image:  VandniTyagi,
+  },
+  {
+    name: "Vikram Mehra",
+    role: "Marketing Head",
+    image:  princyGupta,
+  },
+  {
+    name: "Vikram Mehra",
+    role: "Marketing Head",
+    image:  Swati,
+  },
+  {
+    name: "Vikram Mehra",
+    role: "Marketing Head",
+    image:  Divya,
+  }    
+
 ];
 
 const duplicatedPeople = [...people, ...people]; // For infinite loop
