@@ -11,7 +11,7 @@ const jobs = [
     contractType: 'Permanent',
     salary: 'INR9,000,000 - INR11,000,000 per year',
     description:
-      'The IT role is crucial for enabling productivity across Production, Sales, and Distribution.',
+      'The IT role is crucial for enabling the entire organization to get productivity reports quickly and efficiently across Production, Sales, and Distribution channels. The role involves overseeing IT infrastructure, applications, cyber security, and ensuring compliance with regulatory standards, and playing a crucial role in doubling the topline in the next 5 years.',
     bullets: [
       'Drive tech enablement',
       'Double topline in 5 years'
@@ -25,7 +25,7 @@ const jobs = [
     contractType: 'Permanent',
     salary: 'INR6,000,000 - INR8,000,000 per year',
     description:
-      'Define security policies and lead cyber risk management for telecom infrastructure.',
+      'DThe IT role is crucial for enabling the entire organization to get productivity reports quickly and efficiently across Production, Sales, and Distribution channels. The role involves overseeing IT infrastructure, applications, cyber security, and ensuring compliance with regulatory standards, and playing a crucial role in doubling the topline in the next 5 years.',
     bullets: [
       'Lead cyber security initiatives',
       'High-performing tech team'
@@ -38,7 +38,7 @@ const jobs = [
     contractType: 'Permanent',
     salary: 'INR9,000,000 - INR11,000,000 per year',
     description:
-      'The IT role is crucial for enabling productivity across Production, Sales, and Distribution.',
+      'TThe IT role is crucial for enabling the entire organization to get productivity reports quickly and efficiently across Production, Sales, and Distribution channels. The role involves overseeing IT infrastructure, applications, cyber security, and ensuring compliance with regulatory standards, and playing a crucial role in doubling the topline in the next 5 years.',
     bullets: [
       'Drive tech enablement',
       'Double topline in 5 years'
@@ -52,7 +52,7 @@ const jobs = [
     contractType: 'Permanent',
     salary: 'INR9,000,000 - INR11,000,000 per year',
     description:
-      'The IT role is crucial for enabling productivity across Production, Sales, and Distribution.',
+      'The IT role is crucial for enabling the entire organization to get productivity reports quickly and efficiently across Production, Sales, and Distribution channels. The role involves overseeing IT infrastructure, applications, cyber security, and ensuring compliance with regulatory standards, and playing a crucial role in doubling the topline in the next 5 years.',
     bullets: [
       'Drive tech enablement',
       'Double topline in 5 years'
