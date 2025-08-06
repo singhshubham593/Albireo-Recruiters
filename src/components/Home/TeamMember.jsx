@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import Siddharth from "../../assets/Siddharth.jpg";
 import Honey from "../../assets/HoneySahani.jpg";
-import AarohiSharma from "../../assets/AarohiSharma.jpg";
+import AarohiSharma from "../../assets/ArohiSharma.jpg";
 import Arnapurna from "../../assets/Arnapurna.jpg";
 import Chiranjeev from "../../assets/Chiranjeev.jpg";
 import Hansika from "../../assets/Hansika.jpg";
