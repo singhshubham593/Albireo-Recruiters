@@ -9,7 +9,7 @@ import Hansika from "../../assets/Hansika.jpg";
 import JaganmohanSharma from "../../assets/JagmohanSharma.jpg";
 import MonikaSharma from "../../assets/MonikaSharma.jpg";
 import NancyChawla from "../../assets/NancyChawla.jpg";
- import Rohit from "../../assets/Rohit.jpg";
+import Rohits from "../../assets/Rohits.jpg";
 import Sangmitra from "../../assets/Sangmitra.jpg";
 import BhavnaTyagi from "../../assets/BhavnaTyagi.jpg";
 import VandniTyagi from "../../assets/VandniTyagi.jpg";
@@ -52,7 +52,7 @@ const people = [
   {
     name: "Rohit yodav",
     role: "Sr. Carrer Consultant",
-    image:  Rohit,
+    image:  Rohits,
   },
   {
     name: "Jaganmohan Sharma",
