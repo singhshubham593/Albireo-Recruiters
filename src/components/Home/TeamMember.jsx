@@ -26,22 +26,22 @@ const people = [
   },
   {
     name: "Honey Sahani",
-    role: "Chief Technology Officer",
+    role: "Assistant Manager(Tech)",
     image:  Honey,
   },
   {
     name: "Chiranjeev Singh",
-    role: "Lead Designer",
+    role: "Manager - HR Operations & Admin",
     image:  Chiranjeev,
   },
   {
     name: "Aarohi Sharma",
-    role: "Product Manager",
+    role: "Lead Talent Acquisition",
     image:  AarohiSharma,
   },
   {
     name: "Arnapurna Patra",
-    role: "Marketing Head",
+    role: "Sr. Carrer Consultant",
     image:  Arnapurna,
   },
   {
@@ -51,52 +51,47 @@ const people = [
   },
   {
     name: "Jaganmohan Sharma",
-    role: "Marketing Head",
+    role: "Sr. Carrer Consultant",
     image:  JaganmohanSharma,
   },
   {
     name: "Monika Sharma",
-    role: "Marketing Head",
+    role: "Assistant Manager(Strategy and consulting)",
     image:  MonikaSharma,
   },
   {
-    name: "Vikram Mehra",
-    role: "Marketing Head",
+    name: "Nancy Chawla",
+    role: "Sr. Carrer Consultant",
     image:  NancyChawla,
   },
   {
-    name: "Vikram Mehra",
-    role: "Marketing Head",
+    name: "Sangmitra",
+    role: "Carrer Consultant",
     image:  Sangmitra,
   },
   {
-    name: "Vikram Mehra",
-    role: "Marketing Head",
-    image:  Sangmitra,
-  },
-  {
-    name: "Vikram Mehra",
-    role: "Marketing Head",
+    name: "Bhavna Tyagi",
+    role: "Sr. Carrer Consultant",
     image:  BhavnaTyagi,
   },
   {
-    name: "Vikram Mehra",
-    role: "Marketing Head",
+    name: "Vandni Tyagi",
+    role: "Lead Talent Acquisition",
     image:  VandniTyagi,
   },
   {
-    name: "Vikram Mehra",
-    role: "Marketing Head",
+    name: "Princy Gupta",
+    role: "Sr. Carrer Consultant",
     image:  princyGupta,
   },
   {
-    name: "Vikram Mehra",
-    role: "Marketing Head",
+    name: "Swati Singh",
+    role: "Carrer Consultant",
     image:  Swati,
   },
   {
-    name: "Vikram Mehra",
-    role: "Marketing Head",
+    name: "Divya",
+    role: "Carrer Consultant",
     image:  Divya,
   }    
 
