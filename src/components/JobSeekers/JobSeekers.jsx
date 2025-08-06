@@ -2,12 +2,12 @@
 import React, { useState } from "react";
 import JobButton from "../../pages/JobButton.jsx";
 import UnderDevelopment from "../../pages/UnderDevelopment.jsx";
-import Job from "./Job.jsx";
+import Jobs from "./jobs.jsx";
 
 const JobSeekers = () => {
   return(
     <>
-    <Job />
+    <Jobs />
     {/* <UnderDevelopment /> */}
     </>
   )

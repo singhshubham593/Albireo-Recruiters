@@ -110,8 +110,8 @@ export default function App() {
         (!searchTitle || job.title.toLowerCase().includes(searchTitle.toLowerCase()))) &&
       (!searchClicked ||
         (!searchLocation || job.location.toLowerCase().includes(searchLocation.toLowerCase()))) &&
-      (!filters.location || job.location.toLowerCase().includes(filters.location.toLowerCase())) &&
-      (!filters.contractType || job.contractType.toLowerCase().includes(filters.contractType.toLowerCase())) &&
+      (!filters.location || job.location === filters.location) &&
+      (!filters.contractType || job.contractType === filters.contractType) &&
       (!filters.remote || (filters.remote === 'Yes' ? job.remote : !job.remote)) &&
       (!filters.minSalary || parseInt(filters.minSalary) <= salaryRange[0]) &&
       (!filters.maxSalary || parseInt(filters.maxSalary) >= salaryRange[1])
@@ -206,61 +206,39 @@ export default function App() {
             
             <div className="space-y-4">
               <FilterSection title="Location">
-                <input
-                  type="text"
-                  placeholder="Enter location..."
+                <select
                   value={tempFilters.location}
                   onChange={(e) => setTempFilters({ ...tempFilters, location: e.target.value })}
                   className="w-full border rounded px-3 py-2"
-                />
+                >
+                  <option value="">All</option>
+                  <option value="Mumbai">Mumbai</option>
+                  <option value="Gurgaon">Gurgaon</option>
+                </select>
               </FilterSection>
               
               <FilterSection title="Type of contract">
-                <input
-                  type="text"
-                  placeholder="Enter contract type..."
+                <select
                   value={tempFilters.contractType}
                   onChange={(e) => setTempFilters({ ...tempFilters, contractType: e.target.value })}
                   className="w-full border rounded px-3 py-2"
-                />
+                >
+                  <option value="">All</option>
+                  <option value="Permanent">Permanent</option>
+                  <option value="Temporary">Temporary</option>
+                </select>
               </FilterSection>
               
               <FilterSection title="Work from Home">
-                <div className="space-y-2">
-                  <label className="flex items-center">
-                    <input
-                      type="radio"
-                      name="remote"
-                      value="Yes"
-                      checked={tempFilters.remote === 'Yes'}
-                      onChange={(e) => setTempFilters({ ...tempFilters, remote: e.target.value })}
-                      className="mr-2"
-                    />
-                    Yes
-                  </label>
-                  <label className="flex items-center">
-                    <input
-                      type="radio"
-                      name="remote"
-                      value="No"
-                      checked={tempFilters.remote === 'No'}
-                      onChange={(e) => setTempFilters({ ...tempFilters, remote: e.target.value })}
-                      className="mr-2"
-                    />
-                    No
-                  </label>
-                  <label className="flex items-center">
-                    <input
-                      type="radio"
-                      name="remote"
-                      value=""
-                      checked={tempFilters.remote === ''}
-                      onChange={(e) => setTempFilters({ ...tempFilters, remote: e.target.value })}
-                      className="mr-2"
-                    />
-                    All
-                  </label>
-                </div>
+                <select
+                  value={tempFilters.remote}
+                  onChange={(e) => setTempFilters({ ...tempFilters, remote: e.target.value })}
+                  className="w-full border rounded px-3 py-2"
+                >
+                  <option value="">All</option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
               </FilterSection>
               
               <FilterSection title="Yearly salary (INR)">
@@ -303,92 +281,68 @@ export default function App() {
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-6">
         {/* Desktop Filter Sidebar */}
-        <div className="hidden  md:block col-span-1 bg-white p-4 rounded-md shadow-sm h-fit">
-          <div className="flex justify-between items-center mb-4">
+        <div className="hidden h-fit md:block col-span-1 bg-white p-4 rounded-md shadow-sm">
+          <div className="flex justify-between items-center mb-2">
             <h3 className="text-lg font-semibold">Filter</h3>
-            <button onClick={resetFilters} className="text-sm text-blue-600 hover:text-blue-800">Reset</button>
+            <button onClick={resetFilters} className="text-sm text-blue-600">Reset</button>
           </div>
-          <div className="space-y-4">
-            <FilterSection title="Location">
-              <input
-                type="text"
-                placeholder="Enter location..."
-                value={tempFilters.location}
-                onChange={(e) => setTempFilters({ ...tempFilters, location: e.target.value })}
-                className="w-full border rounded px-3 py-2 text-sm"
-              />
-            </FilterSection>
-            <FilterSection title="Type of contract">
-              <input
-                type="text"
-                placeholder="Enter contract type..."
-                value={tempFilters.contractType}
-                onChange={(e) => setTempFilters({ ...tempFilters, contractType: e.target.value })}
-                className="w-full border rounded px-3 py-2 text-sm"
-              />
-            </FilterSection>
-            <FilterSection title="Work from Home">
-              <div className="space-y-2">
-                <label className="flex items-center text-sm">
-                  <input
-                    type="radio"
-                    name="remote-desktop"
-                    value="Yes"
-                    checked={tempFilters.remote === 'Yes'}
-                    onChange={(e) => setTempFilters({ ...tempFilters, remote: e.target.value })}
-                    className="mr-2"
-                  />
-                  Yes
-                </label>
-                <label className="flex items-center text-sm">
-                  <input
-                    type="radio"
-                    name="remote-desktop"
-                    value="No"
-                    checked={tempFilters.remote === 'No'}
-                    onChange={(e) => setTempFilters({ ...tempFilters, remote: e.target.value })}
-                    className="mr-2"
-                  />
-                  No
-                </label>
-                <label className="flex items-center text-sm">
-                  <input
-                    type="radio"
-                    name="remote-desktop"
-                    value=""
-                    checked={tempFilters.remote === ''}
-                    onChange={(e) => setTempFilters({ ...tempFilters, remote: e.target.value })}
-                    className="mr-2"
-                  />
-                  All
-                </label>
-              </div>
-            </FilterSection>
-            <FilterSection title="Yearly salary (INR)">
-              <div className="flex gap-2">
-                <input
-                  type="number"
-                  placeholder="Min"
-                  value={tempFilters.minSalary}
-                  onChange={(e) => setTempFilters({ ...tempFilters, minSalary: e.target.value })}
-                  className="w-1/2 border rounded px-3 py-2 text-sm"
-                />
-                <input
-                  type="number"
-                  placeholder="Max"
-                  value={tempFilters.maxSalary}
-                  onChange={(e) => setTempFilters({ ...tempFilters, maxSalary: e.target.value })}
-                  className="w-1/2 border rounded px-3 py-2 text-sm"
-                />
-              </div>
-            </FilterSection>
-            <button
-              onClick={applyFilters}
-              className="w-full py-3 bg-gradient-to-r from-yellow-400 to-blue-400 text-black font-semibold rounded-md text-sm shadow-md hover:scale-105 transition transform duration-300"
+          <FilterSection title="Location">
+            <select
+              value={tempFilters.location}
+              onChange={(e) => setTempFilters({ ...tempFilters, location: e.target.value })}
+              className="w-full border rounded px-2 py-1"
             >
-              Apply Filters
-            </button>
-          </div>
+              <option value="">All</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Gurgaon">Gurgaon</option>
+            </select>
+          </FilterSection>
+          <FilterSection title="Type of contract">
+            <select
+              value={tempFilters.contractType}
+              onChange={(e) => setTempFilters({ ...tempFilters, contractType: e.target.value })}
+              className="w-full border rounded px-2 py-1"
+            >
+              <option value="">All</option>
+              <option value="Permanent">Permanent</option>
+              <option value="Temporary">Temporary</option>
+            </select>
+          </FilterSection>
+          <FilterSection title="Work from Home">
+            <select
+              value={tempFilters.remote}
+              onChange={(e) => setTempFilters({ ...tempFilters, remote: e.target.value })}
+              className="w-full border rounded px-2 py-1"
+            >
+              <option value="">All</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </FilterSection>
+          <FilterSection title="Yearly salary (INR)">
+            <div className="flex gap-2">
+              <input
+                type="number"
+                placeholder="Min"
+                value={tempFilters.minSalary}
+                onChange={(e) => setTempFilters({ ...tempFilters, minSalary: e.target.value })}
+                className="w-1/2 border rounded px-2 py-1"
+              />
+              <input
+                type="number"
+                placeholder="Max"
+                value={tempFilters.maxSalary}
+                onChange={(e) => setTempFilters({ ...tempFilters, maxSalary: e.target.value })}
+                className="w-1/2 border rounded px-2 py-1"
+              />
+            </div>
+          </FilterSection>
+          <button
+            onClick={applyFilters}
+            className="mt-4 py-3 w-full bg-gradient-to-r from-yellow-400 to-blue-400 text-black font-semibold rounded-full text-sm sm:text-base md:text-lg shadow-md hover:scale-105 transition transform duration-300"
+          >
+            Apply Filters
+          </button>
         </div>
 
         <div className="col-span-1 md:col-span-3 space-y-4">
