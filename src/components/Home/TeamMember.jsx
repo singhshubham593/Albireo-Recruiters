@@ -17,6 +17,7 @@ import Divya from "../../assets/Divya.jpg";
 import princyGupta from "../../assets/PrincyGupta.jpg";
 import Swati from "../../assets/Swati.jpg";
 
+
 const people = [
   {
     name: "Siddharth Suneja",
