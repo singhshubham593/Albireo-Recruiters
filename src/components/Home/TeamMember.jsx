@@ -1,6 +1,6 @@
  import React from "react";
 import { motion } from "framer-motion";
-import Siddharth from "../../assets/siddharth.jpg";
+import Siddharth from "../../assets/Siddharth.jpg";
 import Honey from "../../assets/honeySahani.jpg";
 import AarohiSharma from "../../assets/aarohiSharma.jpg";
 import Arnapurna from "../../assets/arnapurna.jpg";
@@ -21,7 +21,7 @@ const people = [
   {
     name: "Siddharth Suneja",
     role: "Founder & CEO",
-    image: {Siddharth},
+    image: Siddharth,
   },
   {
     name: "Honey Sahani",
