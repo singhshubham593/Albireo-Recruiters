@@ -9,7 +9,6 @@ import Hansika from "../../assets/Hansika.jpg";
 import JaganmohanSharma from "../../assets/JagmohanSharma.jpg";
 import MonikaSharma from "../../assets/MonikaSharma.jpg";
 import NancyChawla from "../../assets/NancyChawla.jpg";
-import Rohit from "../../assets/Rohit.jpg";
 import Rohit from '../../assets/Rohit.jpg';
 import Sangmitra from "../../assets/Sangmitra.jpg";
 import BhavnaTyagi from "../../assets/BhavnaTyagi.jpg";
