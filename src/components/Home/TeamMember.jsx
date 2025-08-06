@@ -46,7 +46,7 @@ const people = [
   },
   {
     name: "Hansika",
-    role: "Marketing Head",
+    role: "Carrer Consultant",
     image: Hansika ,
   },
   {
