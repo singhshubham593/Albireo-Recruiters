@@ -1,5 +1,5 @@
- import React, { useState } from 'react';
-import { ChevronDown, ChevronRight } from 'lucide-react';
+  import React, { useState } from 'react';
+import { ChevronDown, ChevronRight, Search, Filter, X } from 'lucide-react';
 import JobButton from '../../pages/JobButton';
 import Button from '../../pages/Button';
 
@@ -91,6 +91,7 @@ export default function App() {
   const [searchTitle, setSearchTitle] = useState('');
   const [searchLocation, setSearchLocation] = useState('');
   const [searchClicked, setSearchClicked] = useState(false);
+  const [showMobileFilters, setShowMobileFilters] = useState(false);
 
   const resetFilters = () => {
     setFilters(filtersInitial);
@@ -99,6 +100,7 @@ export default function App() {
 
   const applyFilters = () => {
     setFilters(tempFilters);
+    setShowMobileFilters(false); // Close mobile filter modal after applying
   };
 
   const filteredJobs = jobs.filter((job) => {
@@ -116,8 +118,29 @@ export default function App() {
     );
   });
 
+  // Sort jobs based on selected sort option
+  const sortedJobs = [...filteredJobs].sort((a, b) => {
+    const salaryA = parseInt(a.salary.match(/\d+/g)[0]);
+    const salaryB = parseInt(b.salary.match(/\d+/g)[0]);
+    
+    switch (sort) {
+      case 'Relevance':
+        // Keep original order for relevance
+        return 0;
+      case 'Most recent':
+        // Sort by ID (assuming higher ID means more recent)
+        return b.id - a.id;
+      case 'Salary (high to low)':
+        return salaryB - salaryA;
+      case 'Salary (low to high)':
+        return salaryA - salaryB;
+      default:
+        return 0;
+    }
+  });
+
   return (
-    <div className=" bg-gray-50 p-4">
+    <div className="bg-gray-50 p-4">
       {/* Top Search Bar */}
       <div className="bg-white p-4 rounded-md flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
         <div className="flex flex-1 gap-2 w-full flex-col md:flex-row">
@@ -137,19 +160,128 @@ export default function App() {
           />
           <button
             onClick={() => setSearchClicked(true)}
-            className="px-6 py-2 bg-gradient-to-r from-yellow-400 to-blue-400 text-black font-semibold rounded-full text-sm sm:text-base md:text-lg shadow-md hover:scale-105 transition transform duration-300"
+            className="px-6 py-2 bg-gradient-to-r from-yellow-400 to-blue-400 text-black font-semibold rounded-full text-sm sm:text-base md:text-lg shadow-md hover:scale-105 transition transform duration-300 flex items-center justify-center gap-2"
           >
+            <Search size={16} />
             Search
           </button>
         </div>
-        {/* <button className="px-4 py-2 rounded-full border border-blue-600 text-blue-600 hover:bg-blue-50">
-          Create Job Alert
-        </button> */}
         <Button type={"Create job alert"} />
       </div>
 
-      <div className="grid grid-cols-1  md:grid-cols-4 gap-6 mt-6">
-        <div className="col-span-1 h-110 bg-white p-4 rounded-md shadow-sm">
+      {/* Mobile Filter and Sort Controls */}
+      <div className="md:hidden mt-4 flex gap-2">
+        <button
+          onClick={() => setShowMobileFilters(true)}
+          className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-white rounded-md shadow-sm border"
+        >
+          <Filter size={16} />
+          Filter
+        </button>
+        <select
+          value={sort}
+          onChange={(e) => setSort(e.target.value)}
+          className="flex-1 px-4 py-3 bg-white rounded-md shadow-sm border"
+        >
+          <option value="Relevance">Relevance</option>
+          <option value="Most recent">Most recent</option>
+          <option value="Salary (high to low)">Salary (high to low)</option>
+          <option value="Salary (low to high)">Salary (low to high)</option>
+        </select>
+      </div>
+
+      {/* Mobile Filter Modal */}
+      {showMobileFilters && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 md:hidden">
+          <div className="fixed inset-y-0 left-0 right-0 bg-white p-4 overflow-y-auto">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-lg font-semibold">Filters</h3>
+              <button
+                onClick={() => setShowMobileFilters(false)}
+                className="p-2"
+              >
+                <X size={24} />
+              </button>
+            </div>
+            
+            <div className="space-y-4">
+              <FilterSection title="Location">
+                <select
+                  value={tempFilters.location}
+                  onChange={(e) => setTempFilters({ ...tempFilters, location: e.target.value })}
+                  className="w-full border rounded px-3 py-2"
+                >
+                  <option value="">All</option>
+                  <option value="Mumbai">Mumbai</option>
+                  <option value="Gurgaon">Gurgaon</option>
+                </select>
+              </FilterSection>
+              
+              <FilterSection title="Type of contract">
+                <select
+                  value={tempFilters.contractType}
+                  onChange={(e) => setTempFilters({ ...tempFilters, contractType: e.target.value })}
+                  className="w-full border rounded px-3 py-2"
+                >
+                  <option value="">All</option>
+                  <option value="Permanent">Permanent</option>
+                  <option value="Temporary">Temporary</option>
+                </select>
+              </FilterSection>
+              
+              <FilterSection title="Work from Home">
+                <select
+                  value={tempFilters.remote}
+                  onChange={(e) => setTempFilters({ ...tempFilters, remote: e.target.value })}
+                  className="w-full border rounded px-3 py-2"
+                >
+                  <option value="">All</option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </FilterSection>
+              
+              <FilterSection title="Yearly salary (INR)">
+                <div className="flex gap-2">
+                  <input
+                    type="number"
+                    placeholder="Min"
+                    value={tempFilters.minSalary}
+                    onChange={(e) => setTempFilters({ ...tempFilters, minSalary: e.target.value })}
+                    className="w-1/2 border rounded px-3 py-2"
+                  />
+                  <input
+                    type="number"
+                    placeholder="Max"
+                    value={tempFilters.maxSalary}
+                    onChange={(e) => setTempFilters({ ...tempFilters, maxSalary: e.target.value })}
+                    className="w-1/2 border rounded px-3 py-2"
+                  />
+                </div>
+              </FilterSection>
+              
+              <div className="flex gap-2 pt-4">
+                <button
+                  onClick={resetFilters}
+                  className="flex-1 px-4 py-3 border border-gray-300 rounded-md text-gray-700"
+                >
+                  Reset
+                </button>
+                <button
+                  onClick={applyFilters}
+                  className="flex-1 px-4 py-3 bg-gradient-to-r from-yellow-400 to-blue-400 text-black font-semibold rounded-md"
+                >
+                  Apply Filters
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-6">
+        {/* Desktop Filter Sidebar */}
+        <div className="hidden md:block col-span-1 bg-white p-4 rounded-md shadow-sm">
           <div className="flex justify-between items-center mb-2">
             <h3 className="text-lg font-semibold">Filter</h3>
             <button onClick={resetFilters} className="text-sm text-blue-600">Reset</button>
@@ -214,23 +346,32 @@ export default function App() {
         </div>
 
         <div className="col-span-1 md:col-span-3 space-y-4">
-          <div className="flex justify-between items-center">
+          {/* Desktop Results Header */}
+          <div className="hidden md:flex justify-between items-center">
             <h2 className="text-xl font-semibold">
-              {filteredJobs.length} Information Technology jobs in India
+              {sortedJobs.length} Information Technology jobs in India
             </h2>
             <select
               value={sort}
               onChange={(e) => setSort(e.target.value)}
               className="border px-3 py-2 rounded-md"
             >
-              <option>Relevance</option>
-              <option>Date Posted</option>
-              <option>Salary</option>
+              <option value="Relevance">Relevance</option>
+              <option value="Most recent">Most recent</option>
+              <option value="Salary (high to low)">Salary (high to low)</option>
+              <option value="Salary (low to high)">Salary (low to high)</option>
             </select>
           </div>
 
-          {filteredJobs.map((job) => (
-            <div key={job.id} className="bg-white p-6 rounded-md shadow-sm">
+          {/* Mobile Results Header */}
+          <div className="md:hidden">
+            <h2 className="text-lg font-semibold mb-2">
+              {sortedJobs.length} Information Technology jobs in India
+            </h2>
+          </div>
+
+          {sortedJobs.map((job) => (
+            <div key={job.id} className="bg-white p-4 md:p-6 rounded-md shadow-sm">
               <h3 className="text-lg font-bold text-[#1e1e1e] mb-1">{job.title}</h3>
               <div className="text-sm text-gray-500 mb-2">
                 {job.location} • {job.contractType} • {job.salary}
@@ -241,13 +382,10 @@ export default function App() {
                   <li key={i}>{point}</li>
                 ))}
               </ul>
-              <div className="flex gap-3">
-                {/* <button className="border border-blue-600 text-blue-600 px-4 py-2 rounded-full hover:bg-blue-50">Save Job</button> */}
+              <div className="flex flex-wrap gap-2 md:gap-3">
                 <Button type={"Save"} />
                 <JobButton type={"Refer"} />
                 <JobButton type={"Apply"} />
-                {/* <button className="border border-green-600 text-green-600 px-4 py-2 rounded-full hover:bg-green-50">Refer</button> */}
-                {/* <button className="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700">View Job →</button> */}
               </div>
             </div>
           ))}
