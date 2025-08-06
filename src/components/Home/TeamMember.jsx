@@ -15,7 +15,7 @@ import BhavnaTyagi from "../../assets/BhavnaTyagi.jpg";
 import VandniTyagi from "../../assets/VandniTyagi.jpg";
 import Divya from "../../assets/Divya.jpg";
 import princyGupta from "../../assets/PrincyGupta.jpg";
-import Swati from "../../assets/Swati.jpg";
+import Shweta from "../../assets/Shweta.jpg";
 
 
 const people = [
@@ -85,9 +85,9 @@ const people = [
     image: Hansika ,
   },
   {
-    name: "Swati Singh",
+    name: "Shweta Singh",
     role: "Carrer Consultant",
-    image:  Swati,
+    image:  Shweta,
   },
   {
     name: "Divya",
