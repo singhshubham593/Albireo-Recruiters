@@ -21,7 +21,7 @@ const people = [
   {
     name: "Siddharth Suneja",
     role: "Founder & CEO",
-    image: Siddharth,
+    image: {Siddharth},
   },
   {
     name: "Honey Sahani",
