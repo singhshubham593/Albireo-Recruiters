@@ -35,19 +35,24 @@ const people = [
     image:  Chiranjeev,
   },
   {
+    name: "Monika Sharma",
+    role: "Assistant Manager(Strategy and consulting)",
+    image:  MonikaSharma,
+  },
+  {
     name: "Aarohi Sharma",
     role: "Lead Talent Acquisition",
     image:  AarohiSharma,
   },
   {
+    name: "Vandni Tyagi",
+    role: "Lead Talent Acquisition",
+    image:  VandniTyagi,
+  },
+  {
     name: "Arnapurna Patra",
     role: "Sr. Carrer Consultant",
     image:  Arnapurna,
-  },
-  {
-    name: "Hansika",
-    role: "Carrer Consultant",
-    image: Hansika ,
   },
   {
     name: "Rohit yodav",
@@ -60,19 +65,9 @@ const people = [
     image:  JaganmohanSharma,
   },
   {
-    name: "Monika Sharma",
-    role: "Assistant Manager(Strategy and consulting)",
-    image:  MonikaSharma,
-  },
-  {
     name: "Nancy Chawla",
     role: "Sr. Carrer Consultant",
     image:  NancyChawla,
-  },
-  {
-    name: "Sangmitra",
-    role: "Carrer Consultant",
-    image:  Sangmitra,
   },
   {
     name: "Bhavna Tyagi",
@@ -80,14 +75,14 @@ const people = [
     image:  BhavnaTyagi,
   },
   {
-    name: "Vandni Tyagi",
-    role: "Lead Talent Acquisition",
-    image:  VandniTyagi,
-  },
-  {
     name: "Princy Gupta",
     role: "Sr. Carrer Consultant",
     image:  princyGupta,
+  },
+  {
+    name: "Hansika",
+    role: "Carrer Consultant",
+    image: Hansika ,
   },
   {
     name: "Swati Singh",
@@ -98,7 +93,12 @@ const people = [
     name: "Divya",
     role: "Carrer Consultant",
     image:  Divya,
-  }    
+  },
+  {
+    name: "Sangmitra",
+    role: "Carrer Consultant",
+    image:  Sangmitra,
+  }   
 
 ];
 
