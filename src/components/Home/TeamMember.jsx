@@ -17,7 +17,7 @@ import Divya from "../../assets/Divya.jpg";
 import princyGupta from "../../assets/PrincyGupta.jpg";
 import Shweta from "../../assets/Shweta.jpg";
 import LeehansBisht from "../../assets/LeehansBisht.jpg";
-import SagarSanjay from "../../assets/SagarSanjay.jpg";
+import Sagar from "../../assets/Sagar.jpg";
 import PalakKothari from "../../assets/PalakKothari.jpg";
 
 
