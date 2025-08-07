@@ -19,6 +19,7 @@ import Shweta from "../../assets/Shweta.jpg";
 import Leehans from "../../assets/Leehans.jpg";
 import Sagar from "../../assets/Sagar.jpg";
 import PalakKothari from "../../assets/PalakKothari.jpg";
+import Dayabathi from "../../assets/Dayabathi.jpg";
 
 
 const people = [
@@ -86,6 +87,11 @@ const people = [
     name: "Princy Gupta",
     role: "Sr. Carrer Consultant",
     image:  princyGupta,
+  },
+  {
+    name: "Dayabathi Das",
+    role: "Sr. Carrer Consultant",
+    image:  Dayabathi,
   },
   {
     name: "Sagar Sanjay",
