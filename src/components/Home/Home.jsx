@@ -1,5 +1,5 @@
 import React from 'react'
-import HeroSection from './HeroSection'
+import HeroSectionss from './HeroSectionss'
 import JobMatcher from './JobMatcher'
 import CallToAction from './CallToAction'
 import WhyChooseUs from './WhyChoose'
@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom'
 const Home = () => {
   return (
     <Link to="/Home" className="home-link">
-      <HeroSection />
+      <HeroSectionss />
       <JobMatcher />
       <CallToAction />
       <WhyChooseUs />
