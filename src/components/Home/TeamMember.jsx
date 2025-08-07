@@ -16,6 +16,9 @@ import VandniTyagi from "../../assets/VandniTyagi.jpg";
 import Divya from "../../assets/Divya.jpg";
 import princyGupta from "../../assets/PrincyGupta.jpg";
 import Shweta from "../../assets/Shweta.jpg";
+import LeehansBisht from "../../assets/LeehansBisht.jpg";
+import SagarSanjay from "../../assets/SagarSanjay.jpg";
+import PalakKothari from "../../assets/PalakKothari.jpg";
 
 
 const people = [
@@ -50,6 +53,11 @@ const people = [
     image:  VandniTyagi,
   },
   {
+    name: "Leehans Bisht",
+    role: "Lead Talent Acquisition",
+    image:   LeehansBisht,
+  },
+  {
     name: "Arnapurna Patra",
     role: "Sr. Carrer Consultant",
     image:  Arnapurna,
@@ -80,9 +88,9 @@ const people = [
     image:  princyGupta,
   },
   {
-    name: "Hansika",
+    name: "Sagar Sanjay",
     role: "Carrer Consultant",
-    image: Hansika ,
+    image: SagarSanjay,
   },
   {
     name: "Shweta Singh",
@@ -90,7 +98,12 @@ const people = [
     image:  Shweta,
   },
   {
-    name: "Divya",
+    name: "Palak Kothari",
+    role: "Carrer Consultant",
+    image: PalakKothari ,
+  },
+  {
+    name: "Divya Govind",
     role: "Carrer Consultant",
     image:  Divya,
   },
@@ -98,7 +111,12 @@ const people = [
     name: "Sangmitra",
     role: "Carrer Consultant",
     image:  Sangmitra,
-  }   
+  },
+  {
+    name: "Hansika",
+    role: "Carrer Consultant",
+    image: Hansika ,
+  },  
 
 ];
 
