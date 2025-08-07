@@ -145,9 +145,10 @@ export default function OurPeople() {
               className="relative w-64 h-80 sm:w-72 sm:h-80 md:w-80 md:h-96 rounded-2xl overflow-hidden shadow-xl flex-shrink-0 group transform transition-all duration-500 hover:scale-105 hover:shadow-2xl bg-white"
             >
               <img
+                loading="lazy"
                 src={person.image}
                 alt={person.name}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 will-change-transform"
               />
               <div className="absolute bottom-0 w-full bg-gradient-to-t from-black/80 to-transparent px-5 py-4 text-white">
                 <h3 className="text-xl font-bold">{person.name}</h3>
