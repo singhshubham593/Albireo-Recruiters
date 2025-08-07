@@ -15,6 +15,8 @@ const clients = [
   { name: "AirBNB", logo: "https://logo.clearbit.com/airbnb.com", color: "bg-gradient-to-br from-purple-500 to-orange-400" },
   { name: "Birdeye", logo: "https://logo.clearbit.com/birdeye.com", color: "bg-blue-700" },
   { name: "Fujitsu", logo: "https://img.logo.dev/fujitsu.com?token=pk_U0ZE7b2TQ8epysPhQMxelw", color: "bg-black" },
+  { name: "Admiral Solutions", logo: "https://img.logo.dev/admiralsolutions.in?token=pk_U0ZE7b2TQ8epysPhQMxelw", color: "bg-gradient-to-br from-purple-500 to-orange-400" },
+  
 ];
 
 // Create two identical rows side by side
