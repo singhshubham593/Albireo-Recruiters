@@ -90,7 +90,7 @@ const people = [
   {
     name: "Sagar Sanjay",
     role: "Carrer Consultant",
-    image: SagarSanjay,
+    image: Sagar,
   },
   {
     name: "Shweta Singh",
