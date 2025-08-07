@@ -129,20 +129,20 @@ export default function OurPeople() {
         Our People
       </h2>
 
-      <div className="overflow-hidden relative">
+      <div className="overflow-hidden relative ">
         <motion.div
           className="flex gap-6 w-max"
           animate={{ x: ["0%", "-50%"] }}
           transition={{
             repeat: Infinity,
-            duration: 25,
+            duration: 50,
             ease: "linear",
           }}
         >
           {duplicatedPeople.map((person, index) => (
             <div
               key={index}
-              className="relative w-64 h-80 sm:w-72 sm:h-80 md:w-80 md:h-96 rounded-2xl overflow-hidden shadow-xl flex-shrink-0 group transform transition-all duration-500 hover:scale-105 hover:shadow-2xl bg-white"
+              className="relative w-64 h-80 sm:w-72 sm:h-80 md:w-80 md:h-96 rounded-2xl overflow-hidden shadow-xl flex-shrink-0 group transform transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:rounded-2x bg-white"
             >
               <img
                 loading="lazy"
