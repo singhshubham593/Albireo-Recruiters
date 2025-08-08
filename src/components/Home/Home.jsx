@@ -1,4 +1,5 @@
 import React from 'react'
+import HeroSection from './HeroSection'
 import HeroSectionss from './HeroSectionss'
 import JobMatcher from './JobMatcher'
 import CallToAction from './CallToAction'
@@ -14,6 +15,7 @@ const Home = () => {
   return (
     <Link to="/Home" className="home-link">
       <HeroSectionss />
+      <HeroSection />
       <JobMatcher />
       <CallToAction />
       <WhyChooseUs />

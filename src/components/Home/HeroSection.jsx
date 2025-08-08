@@ -5,11 +5,11 @@ import { ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
   const images = [
-    "/assets/Home1.jpg", // This image path should be relative to your public folder so put it in public/assets folder
-    "/assets/Home2.jpg",
-    "/assets/Home3.jpg",
-    "/assets/Home4.jpg",
-    "/assets/Home5.jpg",
+    "/assets/Home1.png", // This image path should be relative to your public folder so put it in public/assets folder
+    "/assets/Home2.png",
+    "/assets/Home3.png",
+    "/assets/Home4.png",
+    "/assets/Home5.png",
   ];
 
   const [currentImage, setCurrentImage] = useState(0);
@@ -76,7 +76,7 @@ const HeroSection = () => {
           <img
             src={images[currentImage]}
             alt={`Slide ${currentImage + 1}`}
-            className="h-80 w-140 object-cover rounded-lg transition-all duration-500 -translate-4"
+            className="h-120 w-1200 sm:h-140 sm:w-140 md:h-100 md:w-140 lg:h-120 lg:w-160 object-cover rounded-lg transition-all duration-500 -translate-4"
           />
         </div>
         <div className="flex gap-2 mt-4">
