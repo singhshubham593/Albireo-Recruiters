@@ -74,6 +74,7 @@ const HeroSection = () => {
       >
         <div className="bg-gradient-to-br from-gray-100 via-blue-100 to-yellow-600 rounded-2xl overflow-hidden shadow-lg w-full max-w-md">
           <img
+          loading="lazy"
             src={images[currentImage]}
             alt={`Slide ${currentImage + 1}`}
             className="h-120 w-1200 sm:h-140 sm:w-140 md:h-100 md:w-140 lg:h-120 lg:w-160 object-cover rounded-lg transition-all duration-500 -translate-4"
