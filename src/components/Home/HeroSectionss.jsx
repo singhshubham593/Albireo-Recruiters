@@ -2,9 +2,9 @@ import React from 'react';
 
 const HeroSectionss = () => {
   return (
-    <div className="w-full bg-white flex flex-col md:flex-row items-center justify-between px-4 md:px-20 py-12 min-h-[60vh]">
+    <div className="w-full bg-white flex flex-col md:flex-row items-center justify-between px-4 md:px-10 lg:px-20 py-12 min-h-[60vh]">
       {/* Left Section */}
-      <div className="flex-1 flex flex-col md:order-1 items-center md:items-start justify-center text-center md:text-left mb-8 md:mb-0">
+      <div className="flex-1 flex flex-col md:order-1 md:mr-4 items-center md:items-start justify-center text-center md:text-left mb-8 md:mb-0">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
           Building careers.<br />Building organisations.
         </h1>
@@ -13,9 +13,9 @@ const HeroSectionss = () => {
         </p>
       </div>
       {/* Right Section */}
-      <div className="flex-1 flex items-center md:order-2 justify-center w-full h-full">
+      <div className="flex-1 flex items-center sm:item-start md:order-2 justify-center w-full h-full">
         <img
-          src="/assets/Home1.jpg"
+          src="/assets/Home1.png"
           alt="Recruitment"
           className="w-[270px] h-[340px] md:w-350 md:h-[500px] lg:w-[450px] lg:h-[570px] object-cover object-center"
         />

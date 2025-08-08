@@ -9,7 +9,7 @@ const clients = [
   },
   {
     name: "Management Consulting",
-    review:"Recruiting Hub helped us scale our team across multiple locations with precision and speed. Highly professional!We were looking for the right kind of people who could fit into our high-pressure and fast-moving work environment. Albireo took the time to understand that and helped us hire professionals who got what we do from day one. CustomeFeedback."
+    review:"Recruiting Hub helped us scale our team across multiple locations with precision and speed.Highly professional!We were looking for the right kind of people who could fit into our high-pressure and fast-moving work environment.Albireo took the time to understand that and helped us hire professionals who got what we do from day one."
   },
   {
     name: "Banking and Finance",
