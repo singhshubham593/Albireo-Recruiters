@@ -22,12 +22,23 @@ export default function Profile() {
   const [resumeFileUrl, setResumeFileUrl] = useState(null);
   const [resumeFile, setResumeFile] = useState(null);
   const fileInputRef = useRef(null);
+  const [avatarUrl, setAvatarUrl] = useState(
+    typeof window !== 'undefined' && localStorage.getItem('avatarUrl')
+      ? localStorage.getItem('avatarUrl')
+      : 'https://i.pravatar.cc/100?img=8'
+  );
 
   useEffect(() => {
     return () => {
       if (resumeFileUrl) URL.revokeObjectURL(resumeFileUrl);
     };
   }, [resumeFileUrl]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('avatarUrl', avatarUrl || '');
+    } catch {}
+  }, [avatarUrl]);
 
   const handleEdit = () => {
     setIsEditing(!isEditing);
@@ -56,7 +67,7 @@ export default function Profile() {
   };
 
   const renderProfileSection = () => (
-    <div className="w-full max-w-4xl mx-auto p-4 sm:p-6 bg-white rounded-lg shadow-sm overflow-x-hidden">
+    <div className="w-full max-w-4xl mx-auto my-10 p-4 sm:p-6 bg-white rounded-lg shadow-sm overflow-x-hidden ">
       {/* Header (no back button on main profile) */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900">Profile</h1>
@@ -65,9 +76,11 @@ export default function Profile() {
       {/* Profile Info */}
       <div className="flex flex-col md:flex-row items-start md:space-x-6 space-y-4 md:space-y-0 mb-8">
         <div className="flex-shrink-0 self-center md:self-start">
-          <div className="w-20 h-20 bg-gray-700 rounded-full flex items-center justify-center">
-            <span className="text-white text-2xl font-bold">SS</span>
-          </div>
+          <img
+            src={avatarUrl}
+            alt="profile avatar"
+            className="w-20 h-20 rounded-full object-cover"
+          />
         </div>
         
         <div className="flex-1 min-w-0 w-full">

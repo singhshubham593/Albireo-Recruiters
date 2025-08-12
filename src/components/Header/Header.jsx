@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Bell, Menu, X } from "lucide-react";
 import { NavLink,Link } from "react-router-dom";
 
@@ -123,6 +123,14 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileDropdown, setMobileDropdown] = useState(null); // Which main tab is open on mobile
   const [mobileSubSection, setMobileSubSection] = useState(null); // Which left item is selected
+  const [avatarUrl, setAvatarUrl] = useState('https://i.pravatar.cc/40');
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('avatarUrl');
+      if (saved) setAvatarUrl(saved);
+    } catch {}
+  }, []);
 
   const menuItems = Object.keys(NAV);
 
@@ -245,8 +253,8 @@ export default function Header() {
           </div>
           <Link to="/profile">
             <img
-              src="https://i.pravatar.cc/40"
-              className="w-8 h-8 rounded-full cursor-pointer hover:ring-2 hover:ring-blue-300 transition-all"
+              src={avatarUrl}
+              className="w-8 h-8 rounded-full object-cover cursor-pointer hover:ring-2 hover:ring-blue-300 transition-all"
               alt="profile"
             />
           </Link>
