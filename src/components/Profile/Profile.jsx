@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+ import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, Edit, Eye, EyeOff, X, ChevronDown, ChevronRight, Mail, Phone, MapPin, FileText, Settings, Globe, Briefcase, Award, Download, Upload, Trash2, FilePlus2 } from "lucide-react";
 
 export default function Profile() {
@@ -56,81 +56,81 @@ export default function Profile() {
   };
 
   const renderProfileSection = () => (
-    <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-sm">
+    <div className="w-full max-w-4xl mx-auto p-4 sm:p-6 bg-white rounded-lg shadow-sm overflow-x-hidden">
       {/* Header (no back button on main profile) */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900">Profile</h1>
       </div>
 
       {/* Profile Info */}
-      <div className="flex items-start space-x-6 mb-8">
-        <div className="flex-shrink-0">
+      <div className="flex flex-col md:flex-row items-start md:space-x-6 space-y-4 md:space-y-0 mb-8">
+        <div className="flex-shrink-0 self-center md:self-start">
           <div className="w-20 h-20 bg-gray-700 rounded-full flex items-center justify-center">
             <span className="text-white text-2xl font-bold">SS</span>
           </div>
         </div>
         
-        <div className="flex-1">
-          <div className="flex items-center space-x-4 mb-4">
+        <div className="flex-1 min-w-0 w-full">
+          <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-4 w-full">
             {isEditing ? (
               <input
                 type="text"
                 value={profileData.name}
                 onChange={(e) => handleInputChange('name', e.target.value)}
-                className="text-3xl font-bold text-gray-900 border-b-2 border-blue-500 focus:outline-none"
+                className="w-full md:flex-1 text-2xl md:text-3xl font-bold text-gray-900 border-b-2 border-blue-500 focus:outline-none"
               />
             ) : (
-              <h2 className="text-3xl font-bold text-gray-900">{profileData.name}</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 break-words">{profileData.name}</h2>
             )}
             <button
               onClick={isEditing ? handleSave : handleEdit}
-              className="text-blue-600 hover:text-blue-800"
+              className="self-start md:self-auto text-blue-600 hover:text-blue-800"
             >
               {isEditing ? 'Save' : <Edit className="w-5 h-5" />}
             </button>
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-3">
-            <div className="flex items-center space-x-3">
+          <div className="space-y-3 w-full">
+            <div className="flex items-center space-x-3 min-w-0">
               <Mail className="w-5 h-5 text-gray-500" />
               {isEditing ? (
                 <input
                   type="email"
                   value={profileData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
-                  className="flex-1 border-b border-gray-300 focus:border-blue-500 focus:outline-none"
+                  className="flex-1 w-full min-w-0 border-b border-gray-300 focus:border-blue-500 focus:outline-none"
                 />
               ) : (
-                <span className="text-gray-700">{profileData.email}</span>
+                <span className="text-gray-700 break-all">{profileData.email}</span>
               )}
             </div>
 
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-3 min-w-0">
               <Phone className="w-5 h-5 text-gray-500" />
               {isEditing ? (
                 <input
                   type="tel"
                   value={profileData.phone}
                   onChange={(e) => handleInputChange('phone', e.target.value)}
-                  className="flex-1 border-b border-gray-300 focus:border-blue-500 focus:outline-none"
+                  className="flex-1 w-full min-w-0 border-b border-gray-300 focus:border-blue-500 focus:outline-none"
                 />
               ) : (
                 <span className="text-gray-700">{profileData.phone}</span>
               )}
             </div>
 
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-3 min-w-0">
               <MapPin className="w-5 h-5 text-gray-500" />
               {isEditing ? (
                 <input
                   type="text"
                   value={profileData.location}
                   onChange={(e) => handleInputChange('location', e.target.value)}
-                  className="flex-1 border-b border-gray-300 focus:border-blue-500 focus:outline-none"
+                  className="flex-1 w-full min-w-0 border-b border-gray-300 focus:border-blue-500 focus:outline-none"
                 />
               ) : (
-                <span className="text-gray-700">{profileData.location}</span>
+                <span className="text-gray-700 break-words">{profileData.location}</span>
               )}
             </div>
           </div>
