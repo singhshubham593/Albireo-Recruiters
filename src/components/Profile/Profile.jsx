@@ -1,4 +1,4 @@
- import { useEffect, useRef, useState } from "react";
+  import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, Edit, Eye, EyeOff, X, ChevronDown, ChevronRight, Mail, Phone, MapPin, FileText, Settings, Globe, Briefcase, Award, Download, Upload, Trash2, FilePlus2 } from "lucide-react";
 
 export default function Profile() {
