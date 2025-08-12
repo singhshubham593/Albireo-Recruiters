@@ -10,6 +10,7 @@ import Employers from './components/Employers/Employers.jsx'
 import About from './components/About/About.jsx'
 import Contact from './components/Contact/Contact.jsx'
 import Partner from './components/Partner/Partner.jsx'
+import Profile from './components/Profile/Profile.jsx'
  
 
 const router = createBrowserRouter(
@@ -22,6 +23,7 @@ const router = createBrowserRouter(
       <Route path='About' element={<About />} />
       <Route path='Contact' element={<Contact />} />
       <Route path='Partner' element={<Partner />} />
+      <Route path='profile' element={<Profile />} />
     </Route>
   )
 )

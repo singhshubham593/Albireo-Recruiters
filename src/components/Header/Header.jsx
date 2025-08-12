@@ -243,11 +243,13 @@ export default function Header() {
               7
             </span>
           </div>
-          <img
-            src="https://i.pravatar.cc/40"
-            className="w-8 h-8 rounded-full"
-            alt="profile"
-          />
+          <Link to="/profile">
+            <img
+              src="https://i.pravatar.cc/40"
+              className="w-8 h-8 rounded-full cursor-pointer hover:ring-2 hover:ring-blue-300 transition-all"
+              alt="profile"
+            />
+          </Link>
           <button
             className="md:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
