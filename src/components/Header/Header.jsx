@@ -159,7 +159,7 @@ export default function Header() {
     <header className="bg-white shadow-md sticky top-0 z-50 lg:mx-15 md:mx-10 mx-3  lg:mt-8 mt-5 z-50 rounded-lg">
       <div className="max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
-        <Link t0="/Home" className="font-bold text-black md:text-lg cursor-pointer">
+        <Link to="/Home" className="font-bold text-black md:text-lg cursor-pointer">
           Albireo Recruiters
         </Link>
 
