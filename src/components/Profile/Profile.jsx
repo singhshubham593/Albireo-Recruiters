@@ -1,4 +1,4 @@
-  import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, Edit, Eye, EyeOff, X, ChevronDown, ChevronRight, Mail, Phone, MapPin, FileText, Settings, Globe, Briefcase, Award, Download, Upload, Trash2, FilePlus2 } from "lucide-react";
 
 export default function Profile() {
@@ -67,263 +67,1275 @@ export default function Profile() {
   };
 
   const renderProfileSection = () => (
-    <div className="w-full max-w-4xl mx-auto my-10 p-4 sm:p-6 bg-white rounded-lg shadow-sm overflow-x-hidden ">
-      {/* Header (no back button on main profile) */}
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Profile</h1>
-      </div>
-
-      {/* Profile Info */}
-      <div className="flex flex-col md:flex-row items-start md:space-x-6 space-y-4 md:space-y-0 mb-8">
-        <div className="flex-shrink-0 self-center md:self-start">
-          <img
-            src={avatarUrl}
-            alt="profile avatar"
-            className="w-20 h-20 rounded-full object-cover"
-          />
+    <div className="w-full max-w-7xl mx-auto my-10 p-4 sm:p-6 bg-white rounded-lg shadow-sm overflow-x-hidden">
+      {/* Mobile/Tablet Layout (md and below) */}
+      <div className="lg:hidden">
+        {/* Header */}
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold text-gray-900">Profile</h1>
         </div>
-        
-        <div className="flex-1 min-w-0 w-full">
-          <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-4 w-full">
-            {isEditing ? (
-              <input
-                type="text"
-                value={profileData.name}
-                onChange={(e) => handleInputChange('name', e.target.value)}
-                className="w-full md:flex-1 text-2xl md:text-3xl font-bold text-gray-900 border-b-2 border-blue-500 focus:outline-none"
-              />
-            ) : (
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 break-words">{profileData.name}</h2>
-            )}
-            <button
-              onClick={isEditing ? handleSave : handleEdit}
-              className="self-start md:self-auto text-blue-600 hover:text-blue-800"
-            >
-              {isEditing ? 'Save' : <Edit className="w-5 h-5" />}
-            </button>
+
+        {/* Profile Info */}
+        <div className="flex flex-col md:flex-row items-start md:space-x-6 space-y-4 md:space-y-0 mb-8">
+          <div className="flex-shrink-0 self-center md:self-start">
+            <img
+              src={avatarUrl}
+              alt="profile avatar"
+              className="w-20 h-20 rounded-full object-cover"
+            />
           </div>
-
-          {/* Contact Info */}
-          <div className="space-y-3 w-full">
-            <div className="flex items-center space-x-3 min-w-0">
-              <Mail className="w-5 h-5 text-gray-500" />
-              {isEditing ? (
-                <input
-                  type="email"
-                  value={profileData.email}
-                  onChange={(e) => handleInputChange('email', e.target.value)}
-                  className="flex-1 w-full min-w-0 border-b border-gray-300 focus:border-blue-500 focus:outline-none"
-                />
-              ) : (
-                <span className="text-gray-700 break-all">{profileData.email}</span>
-              )}
-            </div>
-
-            <div className="flex items-center space-x-3 min-w-0">
-              <Phone className="w-5 h-5 text-gray-500" />
-              {isEditing ? (
-                <input
-                  type="tel"
-                  value={profileData.phone}
-                  onChange={(e) => handleInputChange('phone', e.target.value)}
-                  className="flex-1 w-full min-w-0 border-b border-gray-300 focus:border-blue-500 focus:outline-none"
-                />
-              ) : (
-                <span className="text-gray-700">{profileData.phone}</span>
-              )}
-            </div>
-
-            <div className="flex items-center space-x-3 min-w-0">
-              <MapPin className="w-5 h-5 text-gray-500" />
+          
+          <div className="flex-1 min-w-0 w-full">
+            <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-4 w-full">
               {isEditing ? (
                 <input
                   type="text"
-                  value={profileData.location}
-                  onChange={(e) => handleInputChange('location', e.target.value)}
-                  className="flex-1 w-full min-w-0 border-b border-gray-300 focus:border-blue-500 focus:outline-none"
+                  value={profileData.name}
+                  onChange={(e) => handleInputChange('name', e.target.value)}
+                  className="w-full md:flex-1 text-2xl md:text-3xl font-bold text-gray-900 border-b-2 border-blue-500 focus:outline-none"
                 />
               ) : (
-                <span className="text-gray-700 break-words">{profileData.location}</span>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 break-words">{profileData.name}</h2>
+              )}
+              <button
+                onClick={isEditing ? handleSave : handleEdit}
+                className="self-start md:self-auto text-blue-600 hover:text-blue-800"
+              >
+                {isEditing ? 'Save' : <Edit className="w-5 h-5" />}
+              </button>
+            </div>
+
+            {/* Contact Info */}
+            <div className="space-y-3 w-full">
+              <div className="flex items-center space-x-3 min-w-0">
+                <Mail className="w-5 h-5 text-gray-500" />
+                {isEditing ? (
+                  <input
+                    type="email"
+                    value={profileData.email}
+                    onChange={(e) => handleInputChange('email', e.target.value)}
+                    className="flex-1 w-full min-w-0 border-b border-gray-300 focus:border-blue-500 focus:outline-none"
+                  />
+                ) : (
+                  <span className="text-gray-700 break-all">{profileData.email}</span>
+                )}
+              </div>
+
+              <div className="flex items-center space-x-3 min-w-0">
+                <Phone className="w-5 h-5 text-gray-500" />
+                {isEditing ? (
+                  <input
+                    type="tel"
+                    value={profileData.phone}
+                    onChange={(e) => handleInputChange('phone', e.target.value)}
+                    className="flex-1 w-full min-w-0 border-b border-gray-300 focus:border-blue-500 focus:outline-none"
+                  />
+                ) : (
+                  <span className="text-gray-700">{profileData.phone}</span>
+                )}
+              </div>
+
+              <div className="flex items-center space-x-3 min-w-0">
+                <MapPin className="w-5 h-5 text-gray-500" />
+                {isEditing ? (
+                  <input
+                    type="text"
+                    value={profileData.location}
+                    onChange={(e) => handleInputChange('location', e.target.value)}
+                    className="flex-1 w-full min-w-0 border-b border-gray-300 focus:border-blue-500 focus:outline-none"
+                  />
+                ) : (
+                  <span className="text-gray-700 break-words">{profileData.location}</span>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Visibility Banner */}
+        <button
+          type="button"
+          onClick={() => {
+            setPendingVisibility(employersCanFind);
+            setVisibilityModalOpen(true);
+          }}
+          className={`${employersCanFind ? "bg-green-100 border-green-200" : "bg-gray-100 border-gray-200"} border rounded-lg p-4 mb-8 w-full flex items-center justify-between text-left`}
+        >
+          <div className="flex items-center space-x-3">
+            {employersCanFind ? (
+              <Eye className="w-5 h-5 text-green-600" />
+            ) : (
+              <EyeOff className="w-5 h-5 text-gray-600" />
+            )}
+            <span className={`${employersCanFind ? "text-green-800" : "text-gray-800"} font-medium`}>
+              {employersCanFind ? "Employers can find you" : "Employers can't find you"}
+            </span>
+          </div>
+          <ChevronDown className={`${employersCanFind ? "text-green-600" : "text-gray-600"} w-5 h-5`} />
+        </button>
+
+        {/* Resume Section */}
+        <div className="mb-8 relative">
+          <h3 className="text-xl font-bold text-gray-900 mb-4">Resume</h3>
+          <div className="bg-white border border-gray-200 rounded-lg p-4 flex items-center justify-between">
+            <div className="flex items-center space-x-3">
+              <div className="bg-blue-100 p-2 rounded">
+                <FileText className="w-6 h-6 text-blue-600" />
+              </div>
+              <div>
+                <div className="flex items-center space-x-2">
+                  <span className="font-medium text-gray-900">{profileData.resume.name}</span>
+                  <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">PDF</span>
+                </div>
+                <p className="text-sm text-gray-500">{profileData.resume.date}</p>
+              </div>
+            </div>
+            <div className="flex items-center">
+              <button onClick={() => setResumeMenuOpen((v) => !v)} className="text-gray-400 hover:text-gray-600">
+                <span className="text-2xl">⋮</span>
+              </button>
+            </div>
+            <input ref={fileInputRef} type="file" accept="application/pdf" className="hidden" onChange={(e) => {
+              const file = e.target.files?.[0];
+              if (!file) return;
+              if (resumeFileUrl) URL.revokeObjectURL(resumeFileUrl);
+              const url = URL.createObjectURL(file);
+              setResumeFile(file);
+              setResumeFileUrl(url);
+              setProfileData((prev) => ({
+                ...prev,
+                resume: {
+                  name: file.name,
+                  date: `Added ${new Date().toLocaleDateString()}`
+                }
+              }));
+              setResumeMenuOpen(false);
+            }} />
+            {resumeMenuOpen && (
+              <>
+                <div className="fixed inset-0" onClick={() => setResumeMenuOpen(false)} />
+                <div className="absolute right-2 top-20 w-64 bg-white border border-gray-200 rounded-xl shadow-xl z-50">
+                  <button onClick={() => {
+                    if (resumeFileUrl) {
+                      window.open(resumeFileUrl, "_blank");
+                    } else {
+                      alert("No resume file. Use Replace file to upload.");
+                    }
+                    setResumeMenuOpen(false);
+                  }} className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 text-left">
+                    <FileText className="w-5 h-5 text-gray-600" />
+                    <span>View</span>
+                  </button>
+                  <button onClick={() => {
+                    if (resumeFileUrl) {
+                      const link = document.createElement('a');
+                      link.href = resumeFileUrl;
+                      link.download = profileData.resume.name || 'resume.pdf';
+                      document.body.appendChild(link);
+                      link.click();
+                      link.remove();
+                    } else {
+                      alert("No resume file to download.");
+                    }
+                    setResumeMenuOpen(false);
+                  }} className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 text-left">
+                    <Download className="w-5 h-5 text-gray-600" />
+                    <span>Download</span>
+                  </button>
+                  <button onClick={() => {
+                    setIsEditing(true);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    setResumeMenuOpen(false);
+                  }} className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 text-left">
+                    <Edit className="w-5 h-5 text-gray-600" />
+                    <span>Update saved information</span>
+                  </button>
+                  <button onClick={() => {
+                    alert('Converted to Indeed Resume (demo)');
+                    setResumeMenuOpen(false);
+                  }} className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 text-left">
+                    <FilePlus2 className="w-5 h-5 text-gray-600" />
+                    <span>Convert to Indeed Resume</span>
+                  </button>
+                  <button onClick={() => fileInputRef.current?.click()} className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 text-left">
+                    <Upload className="w-5 h-5 text-gray-600" />
+                    <span>Replace file</span>
+                  </button>
+                  <button onClick={() => {
+                    if (confirm('Delete the resume file?')) {
+                      if (resumeFileUrl) URL.revokeObjectURL(resumeFileUrl);
+                      setResumeFileUrl(null);
+                      setResumeFile(null);
+                      setProfileData((prev) => ({ ...prev, resume: { name: 'No resume', date: '' } }));
+                    }
+                    setResumeMenuOpen(false);
+                  }} className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 text-left">
+                    <Trash2 className="w-5 h-5 text-red-600" />
+                    <span className="text-red-600">Delete</span>
+                  </button>
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+
+        {/* Job Match Sections for Mobile/Tablet */}
+        <div className="mb-8">
+          <h3 className="text-xl font-bold text-gray-900 mb-4">Improve your job matches</h3>
+          <div className="space-y-3">
+            {[
+              {
+                title: "Qualifications",
+                description: "Highlight your skills and experience.",
+                icon: Settings,
+                section: "qualifications"
+              },
+              {
+                title: "Job preferences",
+                description: "Save specific details like minimum desired pay and schedule.",
+                icon: Briefcase,
+                section: "jobPreferences"
+              },
+              {
+                title: "Hide jobs with these details",
+                description: "Manage the qualifications or preferences used to hide jobs from your search.",
+                icon: Eye,
+                section: "hideJobs"
+              },
+              {
+                title: "Ready to work",
+                description: "Let employers know that you're available to start working as soon as possible.",
+                icon: Award,
+                section: "readyToWork"
+              }
+            ].map((item) => (
+              <button
+                key={item.section}
+                onClick={() => setActiveSection(item.section)}
+                className="w-full text-left p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-3">
+                    <item.icon className="w-5 h-5 text-gray-500" />
+                    <div>
+                      <h4 className="font-medium text-gray-900">{item.title}</h4>
+                      <p className="text-sm text-gray-600">{item.description}</p>
+                    </div>
+                  </div>
+                  <ChevronRight className="w-5 h-5 text-gray-400" />
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Show active section content for mobile/tablet */}
+        {activeSection && (
+          <div className="mt-8">
+            {activeSection === 'qualifications' && (
+              <div className="bg-white rounded-lg shadow-sm p-6">
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">Qualifications</h2>
+                <p className="text-gray-600 mb-8">
+                  We use these details to show you jobs that match your unique skills and experience.
+                </p>
+
+                {/* Education Section */}
+                <div className="mb-8">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="bg-blue-100 p-2 rounded">
+                        <Award className="w-5 h-5 text-blue-600" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-900">Education</h3>
+                    </div>
+                    <button className="text-blue-600 hover:text-blue-800">
+                      <Edit className="w-5 h-5" />
+                    </button>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-4">
+                    <p className="text-gray-700">B.Eng</p>
+                    <p className="text-gray-600 text-sm">Bachelors, Information technology</p>
+                  </div>
+                </div>
+
+                {/* Skills Section */}
+                <div className="mb-8">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="bg-green-100 p-2 rounded">
+                        <Settings className="w-5 h-5 text-green-600" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-900">Skills</h3>
+                    </div>
+                    <button className="text-blue-600 hover:text-blue-800">
+                      <Edit className="w-5 h-5" />
+                    </button>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-4">
+                    <div className="flex flex-wrap gap-2">
+                      {[
+                        "AJAX", "APIs", "Application development", "Communication skills", 
+                        "Debugging", "JSON", "Mobile marketing", "Node.js", "OOP", 
+                        "Performance marketing", "React", "Redux", "Responsive web design (1 year)",
+                        "REST", "SDLC", "Software troubleshooting", "TypeScript", "UI", 
+                        "UI design", "Version control systems", "Web accessibility", 
+                        "Web design", "Web development", "XML"
+                      ].map((skill, index) => (
+                        <span key={index} className="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Languages Section */}
+                <div className="mb-8">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="bg-purple-100 p-2 rounded">
+                        <Globe className="w-5 h-5 text-purple-600" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-900">Languages</h3>
+                    </div>
+                    <button className="text-blue-600 hover:text-blue-800">
+                      <Edit className="w-5 h-5" />
+                    </button>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-4">
+                    <p className="text-gray-700">Bengali, BASIC</p>
+                    <p className="text-gray-600 text-sm">English, Intermediate</p>
+                  </div>
+                </div>
+
+                {/* Add Sections */}
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold text-gray-900">Add more details</h3>
+                  {[
+                    {
+                      title: "Add most recent work experience",
+                      icon: Briefcase,
+                      description: "Highlight your professional background"
+                    },
+                    {
+                      title: "Add licences",
+                      icon: Award,
+                      description: "Include relevant certifications"
+                    },
+                    {
+                      title: "Add certifications",
+                      icon: Award,
+                      description: "Show your qualifications"
+                    }
+                  ].map((item, index) => (
+                    <button
+                      key={index}
+                      className="w-full text-left p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
+                    >
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-3">
+                          <div className="bg-gray-100 p-2 rounded">
+                            <item.icon className="w-5 h-5 text-gray-600" />
+                          </div>
+                          <div>
+                            <h4 className="font-medium text-gray-900">{item.title}</h4>
+                            <p className="text-sm text-gray-600">{item.description}</p>
+                          </div>
+                        </div>
+                        <span className="text-2xl text-gray-400">+</span>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {activeSection === 'jobPreferences' && (
+              <div className="bg-white rounded-lg shadow-sm p-6">
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">Job Preferences</h2>
+                <p className="text-gray-600 mb-8">
+                  Save specific details like minimum desired pay and schedule to get better job matches.
+                </p>
+
+                {/* Salary Preferences */}
+                <div className="mb-8">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="bg-green-100 p-2 rounded">
+                        <Briefcase className="w-5 h-5 text-green-600" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-900">Salary Expectations</h3>
+                    </div>
+                    <button className="text-blue-600 hover:text-blue-800">
+                      <Edit className="w-5 h-5" />
+                    </button>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-4">
+                    <p className="text-gray-700">₹8,00,000 - ₹12,00,000 per annum</p>
+                    <p className="text-gray-600 text-sm">Based on experience and skills</p>
+                  </div>
+                </div>
+
+                {/* Work Schedule */}
+                <div className="mb-8">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="bg-blue-100 p-2 rounded">
+                        <Settings className="w-5 h-5 text-blue-600" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-900">Work Schedule</h3>
+                    </div>
+                    <button className="text-blue-600 hover:text-blue-800">
+                      <Edit className="w-5 h-5" />
+                    </button>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-4">
+                    <p className="text-gray-700">Full-time, Remote/Hybrid</p>
+                    <p className="text-gray-600 text-sm">Flexible with office visits when needed</p>
+                  </div>
+                </div>
+
+                {/* Location Preferences */}
+                <div className="mb-8">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="bg-purple-100 p-2 rounded">
+                        <MapPin className="w-5 h-5 text-purple-600" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-900">Location Preferences</h3>
+                    </div>
+                    <button className="text-blue-600 hover:text-blue-800">
+                      <Edit className="w-5 h-5" />
+                    </button>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-4">
+                    <p className="text-gray-700">Noida, Delhi NCR, Remote</p>
+                    <p className="text-gray-600 text-sm">Willing to relocate for the right opportunity</p>
+                  </div>
+                </div>
+
+                {/* Industry Preferences */}
+                <div className="mb-8">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="bg-orange-100 p-2 rounded">
+                        <Briefcase className="w-5 h-5 text-orange-600" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-900">Industry Preferences</h3>
+                    </div>
+                    <button className="text-blue-600 hover:text-blue-800">
+                      <Edit className="w-5 h-5" />
+                    </button>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-4">
+                    <div className="flex flex-wrap gap-2">
+                      {["Technology", "E-commerce", "Fintech", "Healthcare", "Education"].map((industry, index) => (
+                        <span key={index} className="bg-orange-100 text-orange-800 text-sm px-3 py-1 rounded-full">
+                          {industry}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Add More Preferences */}
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold text-gray-900">Add more preferences</h3>
+                  {[
+                    {
+                      title: "Add work culture preferences",
+                      icon: Briefcase,
+                      description: "Specify your preferred work environment"
+                    },
+                    {
+                      title: "Add travel preferences",
+                      icon: MapPin,
+                      description: "Indicate willingness to travel"
+                    },
+                    {
+                      title: "Add contract preferences",
+                      icon: Briefcase,
+                      description: "Specify contract vs permanent preferences"
+                    }
+                  ].map((item, index) => (
+                    <button
+                      key={index}
+                      className="w-full text-left p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
+                    >
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-3">
+                          <div className="bg-gray-100 p-2 rounded">
+                            <item.icon className="w-5 h-5 text-gray-600" />
+                          </div>
+                          <div>
+                            <h4 className="font-medium text-gray-900">{item.title}</h4>
+                            <p className="text-sm text-gray-600">{item.description}</p>
+                          </div>
+                        </div>
+                        <span className="text-2xl text-gray-400">+</span>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {activeSection === 'hideJobs' && (
+              <div className="bg-white rounded-lg shadow-sm p-6">
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">Hide Jobs</h2>
+                <p className="text-gray-600 mb-8">
+                  Manage the qualifications or preferences used to hide jobs from your search.
+                </p>
+
+                <div className="space-y-6">
+                  <div className="bg-gray-50 rounded-lg p-6">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Current Filters</h3>
+                    <p className="text-gray-600">No active filters. All jobs are visible.</p>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold text-gray-900">Add filters to hide jobs</h3>
+                    {[
+                      "Hide jobs below salary threshold",
+                      "Hide jobs in specific locations",
+                      "Hide jobs from certain companies",
+                      "Hide jobs requiring specific skills you don't have"
+                    ].map((filter, index) => (
+                      <button
+                        key={index}
+                        className="w-full text-left p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
+                      >
+                        <div className="flex items-center justify-between">
+                          <span className="text-gray-900">{filter}</span>
+                          <span className="text-2xl text-gray-400">+</span>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activeSection === 'readyToWork' && (
+              <div className="bg-white rounded-lg shadow-sm p-6">
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">Ready to Work</h2>
+                <p className="text-gray-600 mb-8">
+                  Let employers know that you're available to start working as soon as possible.
+                </p>
+
+                <div className="space-y-6">
+                  <div className="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <div className="flex items-center space-x-3 mb-4">
+                      <div className="bg-green-100 p-2 rounded">
+                        <Award className="w-5 h-5 text-green-600" />
+                      </div>
+                      <h3 className="text-lg font-semibold text-green-900">Status: Available</h3>
+                    </div>
+                    <p className="text-green-800">You're currently marked as available for immediate work.</p>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold text-gray-900">Availability Settings</h3>
+                    {[
+                      {
+                        title: "Start Date",
+                        value: "Immediately",
+                        description: "When you can start working"
+                      },
+                      {
+                        title: "Notice Period",
+                        value: "2 weeks",
+                        description: "Time needed to leave current role"
+                      },
+                      {
+                        title: "Work Type",
+                        value: "Full-time, Part-time",
+                        description: "Types of work you're open to"
+                      }
+                    ].map((setting, index) => (
+                      <div key={index} className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+                        <div>
+                          <h4 className="font-medium text-gray-900">{setting.title}</h4>
+                          <p className="text-sm text-gray-600">{setting.description}</p>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <span className="text-gray-700 font-medium">{setting.value}</span>
+                          <button className="text-blue-600 hover:text-blue-800">
+                            <Edit className="w-5 h-5" />
+                          </button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold text-gray-900">Additional Options</h3>
+                    {[
+                      "Set availability calendar",
+                      "Add preferred interview times",
+                      "Specify relocation preferences",
+                      "Set communication preferences"
+                    ].map((option, index) => (
+                      <button
+                        key={index}
+                        className="w-full text-left p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
+                      >
+                        <div className="flex items-center justify-between">
+                          <span className="text-gray-900">{option}</span>
+                          <span className="text-2xl text-gray-400">+</span>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+
+      {/* Desktop Layout (lg and above) - Two Column */}
+      <div className="hidden lg:flex lg:gap-8">
+        {/* Left Column: Profile + Menu */}
+        <div className="lg:w-1/3">
+          {/* Header */}
+          <div className="mb-8">
+            <h1 className="text-3xl font-bold text-gray-900">Profile</h1>
+          </div>
+
+          {/* Profile Info */}
+          <div className="flex flex-col md:flex-row items-start md:space-x-6 space-y-4 md:space-y-0 mb-8">
+            <div className="flex-shrink-0 self-center md:self-start">
+              <img
+                src={avatarUrl}
+                alt="profile avatar"
+                className="w-20 h-20 rounded-full object-cover"
+              />
+            </div>
+            
+            <div className="flex-1 min-w-0 w-full">
+              <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-4 w-full">
+                {isEditing ? (
+                  <input
+                    type="text"
+                    value={profileData.name}
+                    onChange={(e) => handleInputChange('name', e.target.value)}
+                    className="w-full md:flex-1 text-2xl md:text-3xl font-bold text-gray-900 border-b-2 border-blue-500 focus:outline-none"
+                  />
+                ) : (
+                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900 break-words">{profileData.name}</h2>
+                )}
+                <button
+                  onClick={isEditing ? handleSave : handleEdit}
+                  className="self-start md:self-auto text-blue-600 hover:text-blue-800"
+                >
+                  {isEditing ? 'Save' : <Edit className="w-5 h-5" />}
+                </button>
+              </div>
+
+              {/* Contact Info */}
+              <div className="space-y-3 w-full">
+                <div className="flex items-center space-x-3 min-w-0">
+                  <Mail className="w-5 h-5 text-gray-500" />
+                  {isEditing ? (
+                    <input
+                      type="email"
+                      value={profileData.email}
+                      onChange={(e) => handleInputChange('email', e.target.value)}
+                      className="flex-1 w-full min-w-0 border-b border-gray-300 focus:border-blue-500 focus:outline-none"
+                    />
+                  ) : (
+                    <span className="text-gray-700 break-all">{profileData.email}</span>
+                  )}
+                </div>
+
+                <div className="flex items-center space-x-3 min-w-0">
+                  <Phone className="w-5 h-5 text-gray-500" />
+                  {isEditing ? (
+                    <input
+                      type="tel"
+                      value={profileData.phone}
+                      onChange={(e) => handleInputChange('phone', e.target.value)}
+                      className="flex-1 w-full min-w-0 border-b border-gray-300 focus:border-blue-500 focus:outline-none"
+                    />
+                  ) : (
+                    <span className="text-gray-700">{profileData.phone}</span>
+                  )}
+                </div>
+
+                <div className="flex items-center space-x-3 min-w-0">
+                  <MapPin className="w-5 h-5 text-gray-500" />
+                  {isEditing ? (
+                    <input
+                      type="text"
+                      value={profileData.location}
+                      onChange={(e) => handleInputChange('location', e.target.value)}
+                      className="flex-1 w-full min-w-0 border-b border-gray-300 focus:border-blue-500 focus:outline-none"
+                    />
+                  ) : (
+                    <span className="text-gray-700 break-words">{profileData.location}</span>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Visibility Banner */}
+          <button
+            type="button"
+            onClick={() => {
+              setPendingVisibility(employersCanFind);
+              setVisibilityModalOpen(true);
+            }}
+            className={`${employersCanFind ? "bg-green-100 border-green-200" : "bg-gray-100 border-gray-200"} border rounded-lg p-4 mb-8 w-full flex items-center justify-between text-left`}
+          >
+            <div className="flex items-center space-x-3">
+              {employersCanFind ? (
+                <Eye className="w-5 h-5 text-green-600" />
+              ) : (
+                <EyeOff className="w-5 h-5 text-gray-600" />
+              )}
+              <span className={`${employersCanFind ? "text-green-800" : "text-gray-800"} font-medium`}>
+                {employersCanFind ? "Employers can find you" : "Employers can't find you"}
+              </span>
+            </div>
+            <ChevronDown className={`${employersCanFind ? "text-green-600" : "text-gray-600"} w-5 h-5`} />
+          </button>
+
+          {/* Resume Section */}
+          <div className="mb-8 relative">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Resume</h3>
+            <div className="bg-white border border-gray-200 rounded-lg p-4 flex items-center justify-between">
+              <div className="flex items-center space-x-3">
+                <div className="bg-blue-100 p-2 rounded">
+                  <FileText className="w-6 h-6 text-blue-600" />
+                </div>
+                <div>
+                  <div className="flex items-center space-x-2">
+                    <span className="font-medium text-gray-900">{profileData.resume.name}</span>
+                    <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">PDF</span>
+                  </div>
+                  <p className="text-sm text-gray-500">{profileData.resume.date}</p>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <button onClick={() => setResumeMenuOpen((v) => !v)} className="text-gray-400 hover:text-gray-600">
+                  <span className="text-2xl">⋮</span>
+                </button>
+              </div>
+              <input ref={fileInputRef} type="file" accept="application/pdf" className="hidden" onChange={(e) => {
+                const file = e.target.files?.[0];
+                if (!file) return;
+                if (resumeFileUrl) URL.revokeObjectURL(resumeFileUrl);
+                const url = URL.createObjectURL(file);
+                setResumeFile(file);
+                setResumeFileUrl(url);
+                setProfileData((prev) => ({
+                  ...prev,
+                  resume: {
+                    name: file.name,
+                    date: `Added ${new Date().toLocaleDateString()}`
+                  }
+                }));
+                setResumeMenuOpen(false);
+              }} />
+              {resumeMenuOpen && (
+                <>
+                  <div className="fixed inset-0" onClick={() => setResumeMenuOpen(false)} />
+                  <div className="absolute right-2 top-20 w-64 bg-white border border-gray-200 rounded-xl shadow-xl z-50">
+                    <button onClick={() => {
+                      if (resumeFileUrl) {
+                        window.open(resumeFileUrl, "_blank");
+                      } else {
+                        alert("No resume file. Use Replace file to upload.");
+                      }
+                      setResumeMenuOpen(false);
+                    }} className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 text-left">
+                      <FileText className="w-5 h-5 text-gray-600" />
+                      <span>View</span>
+                    </button>
+                    <button onClick={() => {
+                      if (resumeFileUrl) {
+                        const link = document.createElement('a');
+                        link.href = resumeFileUrl;
+                        link.download = profileData.resume.name || 'resume.pdf';
+                        document.body.appendChild(link);
+                        link.click();
+                        link.remove();
+                      } else {
+                        alert("No resume file to download.");
+                      }
+                      setResumeMenuOpen(false);
+                    }} className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 text-left">
+                      <Download className="w-5 h-5 text-gray-600" />
+                      <span>Download</span>
+                    </button>
+                    <button onClick={() => {
+                      setIsEditing(true);
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                      setResumeMenuOpen(false);
+                    }} className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 text-left">
+                      <Edit className="w-5 h-5 text-gray-600" />
+                      <span>Update saved information</span>
+                    </button>
+                    <button onClick={() => {
+                      alert('Converted to Indeed Resume (demo)');
+                      setResumeMenuOpen(false);
+                    }} className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 text-left">
+                      <FilePlus2 className="w-5 h-5 text-gray-600" />
+                      <span>Convert to Indeed Resume</span>
+                    </button>
+                    <button onClick={() => fileInputRef.current?.click()} className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 text-left">
+                      <Upload className="w-5 h-5 text-gray-600" />
+                      <span>Replace file</span>
+                    </button>
+                    <button onClick={() => {
+                      if (confirm('Delete the resume file?')) {
+                        if (resumeFileUrl) URL.revokeObjectURL(resumeFileUrl);
+                        setResumeFileUrl(null);
+                        setResumeFile(null);
+                        setProfileData((prev) => ({ ...prev, resume: { name: 'No resume', date: '' } }));
+                      }
+                      setResumeMenuOpen(false);
+                    }} className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 text-left">
+                      <Trash2 className="w-5 h-5 text-red-600" />
+                      <span className="text-red-600">Delete</span>
+                    </button>
+                  </div>
+                </>
               )}
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Visibility Banner */}
-      <button
-        type="button"
-        onClick={() => {
-          setPendingVisibility(employersCanFind);
-          setVisibilityModalOpen(true);
-        }}
-        className={`${employersCanFind ? "bg-green-100 border-green-200" : "bg-gray-100 border-gray-200"} border rounded-lg p-4 mb-8 w-full flex items-center justify-between text-left`}
-      >
-        <div className="flex items-center space-x-3">
-          {employersCanFind ? (
-            <Eye className="w-5 h-5 text-green-600" />
-          ) : (
-            <EyeOff className="w-5 h-5 text-gray-600" />
-          )}
-          <span className={`${employersCanFind ? "text-green-800" : "text-gray-800"} font-medium`}>
-            {employersCanFind ? "Employers can find you" : "Employers can't find you"}
-          </span>
-        </div>
-        <ChevronDown className={`${employersCanFind ? "text-green-600" : "text-gray-600"} w-5 h-5`} />
-      </button>
-
-      {/* Resume Section */}
-      <div className="mb-8 relative">
-        <h3 className="text-xl font-bold text-gray-900 mb-4">Resume</h3>
-        <div className="bg-white border border-gray-200 rounded-lg p-4 flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <div className="bg-blue-100 p-2 rounded">
-              <FileText className="w-6 h-6 text-blue-600" />
-            </div>
-            <div>
-              <div className="flex items-center space-x-2">
-                <span className="font-medium text-gray-900">{profileData.resume.name}</span>
-                <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">PDF</span>
-              </div>
-              <p className="text-sm text-gray-500">{profileData.resume.date}</p>
+          {/* Job Match Sections */}
+          <div className="sticky top-20">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Improve your job matches</h3>
+            <div className="space-y-3">
+              {[
+                {
+                  title: "Qualifications",
+                  description: "Highlight your skills and experience.",
+                  icon: Settings,
+                  section: "qualifications"
+                },
+                {
+                  title: "Job preferences",
+                  description: "Save specific details like minimum desired pay and schedule.",
+                  icon: Briefcase,
+                  section: "jobPreferences"
+                },
+                {
+                  title: "Hide jobs with these details",
+                  description: "Manage the qualifications or preferences used to hide jobs from your search.",
+                  icon: Eye,
+                  section: "hideJobs"
+                },
+                {
+                  title: "Ready to work",
+                  description: "Let employers know that you're available to start working as soon as possible.",
+                  icon: Award,
+                  section: "readyToWork"
+                }
+              ].map((item) => (
+                <button
+                  key={item.section}
+                  onClick={() => setActiveSection(item.section)}
+                  className={`w-full text-left p-4 border rounded-lg transition-colors ${
+                    activeSection === item.section 
+                      ? 'border-blue-400 bg-blue-50' 
+                      : 'border-gray-200 hover:border-blue-300 hover:bg-blue-50'
+                  }`}
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <item.icon className="w-5 h-5 text-gray-500" />
+                      <div>
+                        <h4 className="font-medium text-gray-900">{item.title}</h4>
+                        <p className="text-sm text-gray-600">{item.description}</p>
+                      </div>
+                    </div>
+                    <ChevronRight className={`w-5 h-5 ${
+                      activeSection === item.section ? 'text-blue-500' : 'text-gray-400'
+                    }`} />
+                  </div>
+                </button>
+              ))}
             </div>
           </div>
-          <div className="flex items-center">
-            <button onClick={() => setResumeMenuOpen((v) => !v)} className="text-gray-400 hover:text-gray-600">
-              <span className="text-2xl">⋮</span>
-            </button>
-          </div>
-          <input ref={fileInputRef} type="file" accept="application/pdf" className="hidden" onChange={(e) => {
-            const file = e.target.files?.[0];
-            if (!file) return;
-            if (resumeFileUrl) URL.revokeObjectURL(resumeFileUrl);
-            const url = URL.createObjectURL(file);
-            setResumeFile(file);
-            setResumeFileUrl(url);
-            setProfileData((prev) => ({
-              ...prev,
-              resume: {
-                name: file.name,
-                date: `Added ${new Date().toLocaleDateString()}`
-              }
-            }));
-            setResumeMenuOpen(false);
-          }} />
-          {resumeMenuOpen && (
-            <>
-              <div className="fixed inset-0" onClick={() => setResumeMenuOpen(false)} />
-              <div className="absolute right-2 top-20 w-64 bg-white border border-gray-200 rounded-xl shadow-xl z-50">
-                <button onClick={() => {
-                  if (resumeFileUrl) {
-                    window.open(resumeFileUrl, "_blank");
-                  } else {
-                    alert("No resume file. Use Replace file to upload.");
-                  }
-                  setResumeMenuOpen(false);
-                }} className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 text-left">
-                  <FileText className="w-5 h-5 text-gray-600" />
-                  <span>View</span>
-                </button>
-                <button onClick={() => {
-                  if (resumeFileUrl) {
-                    const link = document.createElement('a');
-                    link.href = resumeFileUrl;
-                    link.download = profileData.resume.name || 'resume.pdf';
-                    document.body.appendChild(link);
-                    link.click();
-                    link.remove();
-                  } else {
-                    alert("No resume file to download.");
-                  }
-                  setResumeMenuOpen(false);
-                }} className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 text-left">
-                  <Download className="w-5 h-5 text-gray-600" />
-                  <span>Download</span>
-                </button>
-                <button onClick={() => {
-                  setIsEditing(true);
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                  setResumeMenuOpen(false);
-                }} className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 text-left">
-                  <Edit className="w-5 h-5 text-gray-600" />
-                  <span>Update saved information</span>
-                </button>
-                <button onClick={() => {
-                  alert('Converted to Indeed Resume (demo)');
-                  setResumeMenuOpen(false);
-                }} className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 text-left">
-                  <FilePlus2 className="w-5 h-5 text-gray-600" />
-                  <span>Convert to Indeed Resume</span>
-                </button>
-                <button onClick={() => fileInputRef.current?.click()} className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 text-left">
-                  <Upload className="w-5 h-5 text-gray-600" />
-                  <span>Replace file</span>
-                </button>
-                <button onClick={() => {
-                  if (confirm('Delete the resume file?')) {
-                    if (resumeFileUrl) URL.revokeObjectURL(resumeFileUrl);
-                    setResumeFileUrl(null);
-                    setResumeFile(null);
-                    setProfileData((prev) => ({ ...prev, resume: { name: 'No resume', date: '' } }));
-                  }
-                  setResumeMenuOpen(false);
-                }} className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 text-left">
-                  <Trash2 className="w-5 h-5 text-red-600" />
-                  <span className="text-red-600">Delete</span>
-                </button>
-              </div>
-            </>
-          )}
         </div>
-      </div>
 
-      {/* Job Match Sections */}
-      <div>
-        <h3 className="text-xl font-bold text-gray-900 mb-4">Improve your job matches</h3>
-        <div className="space-y-3">
-          {[
-            {
-              title: "Qualifications",
-              description: "Highlight your skills and experience.",
-              icon: Settings,
-              section: "qualifications"
-            },
-            {
-              title: "Job preferences",
-              description: "Save specific details like minimum desired pay and schedule.",
-              icon: Briefcase,
-              section: "jobPreferences"
-            },
-            {
-              title: "Hide jobs with these details",
-              description: "Manage the qualifications or preferences used to hide jobs from your search.",
-              icon: Eye,
-              section: "hideJobs"
-            },
-            {
-              title: "Ready to work",
-              description: "Let employers know that you're available to start working as soon as possible.",
-              icon: Award,
-              section: "readyToWork"
-            }
-          ].map((item) => (
-            <button
-              key={item.section}
-              onClick={() => setActiveSection(item.section)}
-              className="w-full text-left p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
-            >
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-3">
-                  <item.icon className="w-5 h-5 text-gray-500" />
-                  <div>
-                    <h4 className="font-medium text-gray-900">{item.title}</h4>
-                    <p className="text-sm text-gray-600">{item.description}</p>
+        {/* Right Column: Active Section Content */}
+        <div className="lg:w-2/3 mt-8 lg:mt-0">
+          {activeSection === 'qualifications' && (
+            <div className="bg-white rounded-lg shadow-sm p-6">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Qualifications</h2>
+              <p className="text-gray-600 mb-8">
+                We use these details to show you jobs that match your unique skills and experience.
+              </p>
+
+              {/* Education Section */}
+              <div className="mb-8">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center space-x-3">
+                    <div className="bg-blue-100 p-2 rounded">
+                      <Award className="w-5 h-5 text-blue-600" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900">Education</h3>
+                  </div>
+                  <button className="text-blue-600 hover:text-blue-800">
+                    <Edit className="w-5 h-5" />
+                  </button>
+                </div>
+                <div className="bg-gray-50 rounded-lg p-4">
+                  <p className="text-gray-700">B.Eng</p>
+                  <p className="text-gray-600 text-sm">Bachelors, Information technology</p>
+                </div>
+              </div>
+
+              {/* Skills Section */}
+              <div className="mb-8">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center space-x-3">
+                    <div className="bg-green-100 p-2 rounded">
+                      <Settings className="w-5 h-5 text-green-600" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900">Skills</h3>
+                  </div>
+                  <button className="text-blue-600 hover:text-blue-800">
+                    <Edit className="w-5 h-5" />
+                  </button>
+                </div>
+                <div className="bg-gray-50 rounded-lg p-4">
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      "AJAX", "APIs", "Application development", "Communication skills", 
+                      "Debugging", "JSON", "Mobile marketing", "Node.js", "OOP", 
+                      "Performance marketing", "React", "Redux", "Responsive web design (1 year)",
+                      "REST", "SDLC", "Software troubleshooting", "TypeScript", "UI", 
+                      "UI design", "Version control systems", "Web accessibility", 
+                      "Web design", "Web development", "XML"
+                    ].map((skill, index) => (
+                      <span key={index} className="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">
+                        {skill}
+                      </span>
+                    ))}
                   </div>
                 </div>
-                <ChevronRight className="w-5 h-5 text-gray-400" />
               </div>
-            </button>
-          ))}
+
+              {/* Languages Section */}
+              <div className="mb-8">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center space-x-3">
+                    <div className="bg-purple-100 p-2 rounded">
+                      <Globe className="w-5 h-5 text-purple-600" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900">Languages</h3>
+                  </div>
+                  <button className="text-blue-600 hover:text-blue-800">
+                    <Edit className="w-5 h-5" />
+                  </button>
+                </div>
+                <div className="bg-gray-50 rounded-lg p-4">
+                  <p className="text-gray-700">Bengali, BASIC</p>
+                  <p className="text-gray-600 text-sm">English, Intermediate</p>
+                </div>
+              </div>
+
+              {/* Add Sections */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-gray-900">Add more details</h3>
+                {[
+                  {
+                    title: "Add most recent work experience",
+                    icon: Briefcase,
+                    description: "Highlight your professional background"
+                  },
+                  {
+                    title: "Add licences",
+                    icon: Award,
+                    description: "Include relevant certifications"
+                  },
+                  {
+                    title: "Add certifications",
+                    icon: Award,
+                    description: "Show your qualifications"
+                  }
+                ].map((item, index) => (
+                  <button
+                    key={index}
+                    className="w-full text-left p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-3">
+                        <div className="bg-gray-100 p-2 rounded">
+                          <item.icon className="w-5 h-5 text-gray-600" />
+                        </div>
+                        <div>
+                          <h4 className="font-medium text-gray-900">{item.title}</h4>
+                          <p className="text-sm text-gray-600">{item.description}</p>
+                        </div>
+                      </div>
+                      <span className="text-2xl text-gray-400">+</span>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {activeSection === 'jobPreferences' && (
+            <div className="bg-white rounded-lg shadow-sm p-6">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Job Preferences</h2>
+              <p className="text-gray-600 mb-8">
+                Save specific details like minimum desired pay and schedule to get better job matches.
+              </p>
+
+              {/* Salary Preferences */}
+              <div className="mb-8">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center space-x-3">
+                    <div className="bg-green-100 p-2 rounded">
+                      <Briefcase className="w-5 h-5 text-green-600" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900">Salary Expectations</h3>
+                  </div>
+                  <button className="text-blue-600 hover:text-blue-800">
+                    <Edit className="w-5 h-5" />
+                  </button>
+                </div>
+                <div className="bg-gray-50 rounded-lg p-4">
+                  <p className="text-gray-700">₹8,00,000 - ₹12,00,000 per annum</p>
+                  <p className="text-gray-600 text-sm">Based on experience and skills</p>
+                </div>
+              </div>
+
+              {/* Work Schedule */}
+              <div className="mb-8">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center space-x-3">
+                    <div className="bg-blue-100 p-2 rounded">
+                      <Settings className="w-5 h-5 text-blue-600" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900">Work Schedule</h3>
+                  </div>
+                  <button className="text-blue-600 hover:text-blue-800">
+                    <Edit className="w-5 h-5" />
+                  </button>
+                </div>
+                <div className="bg-gray-50 rounded-lg p-4">
+                  <p className="text-gray-700">Full-time, Remote/Hybrid</p>
+                  <p className="text-gray-600 text-sm">Flexible with office visits when needed</p>
+                </div>
+              </div>
+
+              {/* Location Preferences */}
+              <div className="mb-8">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center space-x-3">
+                    <div className="bg-purple-100 p-2 rounded">
+                      <MapPin className="w-5 h-5 text-purple-600" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900">Location Preferences</h3>
+                  </div>
+                  <button className="text-blue-600 hover:text-blue-800">
+                    <Edit className="w-5 h-5" />
+                  </button>
+                </div>
+                <div className="bg-gray-50 rounded-lg p-4">
+                  <p className="text-gray-700">Noida, Delhi NCR, Remote</p>
+                  <p className="text-gray-600 text-sm">Willing to relocate for the right opportunity</p>
+                </div>
+              </div>
+
+              {/* Industry Preferences */}
+              <div className="mb-8">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center space-x-3">
+                    <div className="bg-orange-100 p-2 rounded">
+                      <Briefcase className="w-5 h-5 text-orange-600" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900">Industry Preferences</h3>
+                  </div>
+                  <button className="text-blue-600 hover:text-blue-800">
+                    <Edit className="w-5 h-5" />
+                  </button>
+                </div>
+                <div className="bg-gray-50 rounded-lg p-4">
+                  <div className="flex flex-wrap gap-2">
+                    {["Technology", "E-commerce", "Fintech", "Healthcare", "Education"].map((industry, index) => (
+                      <span key={index} className="bg-orange-100 text-orange-800 text-sm px-3 py-1 rounded-full">
+                        {industry}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Add More Preferences */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-gray-900">Add more preferences</h3>
+                {[
+                  {
+                    title: "Add work culture preferences",
+                    icon: Briefcase,
+                    description: "Specify your preferred work environment"
+                  },
+                  {
+                    title: "Add travel preferences",
+                    icon: MapPin,
+                    description: "Indicate willingness to travel"
+                  },
+                  {
+                    title: "Add contract preferences",
+                    icon: Briefcase,
+                    description: "Specify contract vs permanent preferences"
+                  }
+                ].map((item, index) => (
+                  <button
+                    key={index}
+                    className="w-full text-left p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-3">
+                        <div className="bg-gray-100 p-2 rounded">
+                          <item.icon className="w-5 h-5 text-gray-600" />
+                        </div>
+                        <div>
+                          <h4 className="font-medium text-gray-900">{item.title}</h4>
+                          <p className="text-sm text-gray-600">{item.description}</p>
+                        </div>
+                      </div>
+                      <span className="text-2xl text-gray-400">+</span>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {activeSection === 'hideJobs' && (
+            <div className="bg-white rounded-lg shadow-sm p-6">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Hide Jobs</h2>
+              <p className="text-gray-600 mb-8">
+                Manage the qualifications or preferences used to hide jobs from your search.
+              </p>
+
+              <div className="space-y-6">
+                <div className="bg-gray-50 rounded-lg p-6">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Current Filters</h3>
+                  <p className="text-gray-600">No active filters. All jobs are visible.</p>
+                </div>
+
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold text-gray-900">Add filters to hide jobs</h3>
+                  {[
+                    "Hide jobs below salary threshold",
+                    "Hide jobs in specific locations",
+                    "Hide jobs from certain companies",
+                    "Hide jobs requiring specific skills you don't have"
+                  ].map((filter, index) => (
+                    <button
+                      key={index}
+                      className="w-full text-left p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
+                    >
+                      <div className="flex items-center justify-between">
+                        <span className="text-gray-900">{filter}</span>
+                        <span className="text-2xl text-gray-400">+</span>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {activeSection === 'readyToWork' && (
+            <div className="bg-white rounded-lg shadow-sm p-6">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Ready to Work</h2>
+              <p className="text-gray-600 mb-8">
+                Let employers know that you're available to start working as soon as possible.
+              </p>
+
+              <div className="space-y-6">
+                <div className="bg-green-50 border border-green-200 rounded-lg p-6">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <div className="bg-green-100 p-2 rounded">
+                      <Award className="w-5 h-5 text-green-600" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-green-900">Status: Available</h3>
+                  </div>
+                  <p className="text-green-800">You're currently marked as available for immediate work.</p>
+                </div>
+
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold text-gray-900">Availability Settings</h3>
+                  {[
+                    {
+                      title: "Start Date",
+                      value: "Immediately",
+                      description: "When you can start working"
+                    },
+                    {
+                      title: "Notice Period",
+                      value: "2 weeks",
+                      description: "Time needed to leave current role"
+                    },
+                    {
+                      title: "Work Type",
+                      value: "Full-time, Part-time",
+                      description: "Types of work you're open to"
+                    }
+                  ].map((setting, index) => (
+                    <div key={index} className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+                      <div>
+                        <h4 className="font-medium text-gray-900">{setting.title}</h4>
+                        <p className="text-sm text-gray-600">{setting.description}</p>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <span className="text-gray-700 font-medium">{setting.value}</span>
+                        <button className="text-blue-600 hover:text-blue-800">
+                          <Edit className="w-5 h-5" />
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold text-gray-900">Additional Options</h3>
+                  {[
+                    "Set availability calendar",
+                    "Add preferred interview times",
+                    "Specify relocation preferences",
+                    "Set communication preferences"
+                  ].map((option, index) => (
+                    <button
+                      key={index}
+                      className="w-full text-left p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
+                    >
+                      <div className="flex items-center justify-between">
+                        <span className="text-gray-900">{option}</span>
+                        <span className="text-2xl text-gray-400">+</span>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {!activeSection && (
+            <div className="flex items-center justify-center h-full min-h-[400px] border-2 border-dashed border-gray-300 rounded-lg">
+              <div className="text-center">
+                <div className="text-gray-400 mb-2">
+                  <Settings className="w-16 h-16 mx-auto" />
+                </div>
+                <h3 className="text-lg font-medium text-gray-900 mb-2">Select a section</h3>
+                <p className="text-gray-500">Choose from the left menu to view and edit details</p>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -416,432 +1428,11 @@ export default function Profile() {
     );
   };
 
-  const renderQualificationsSection = () => (
-    <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-sm">
-      {/* Header */}
-      <div className="flex items-center justify-between mb-8">
-        <button 
-          onClick={() => setActiveSection(null)}
-          className="flex items-center text-gray-600 hover:text-gray-800"
-        >
-          <ArrowLeft className="w-5 h-5 mr-2" />
-          Back to Profile
-        </button>
-        <h1 className="text-3xl font-bold text-gray-900">Qualifications</h1>
-      </div>
-      
-      <p className="text-gray-600 mb-8">
-        We use these details to show you jobs that match your unique skills and experience.
-      </p>
-
-      {/* Education Section */}
-      <div className="mb-8">
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center space-x-3">
-            <div className="bg-blue-100 p-2 rounded">
-              <Award className="w-5 h-5 text-blue-600" />
-            </div>
-            <h3 className="text-lg font-semibold text-gray-900">Education</h3>
-          </div>
-          <button className="text-blue-600 hover:text-blue-800">
-            <Edit className="w-5 h-5" />
-          </button>
-        </div>
-        <div className="bg-gray-50 rounded-lg p-4">
-          <p className="text-gray-700">B.Eng</p>
-          <p className="text-gray-600 text-sm">Bachelors, Information technology</p>
-        </div>
-      </div>
-
-      {/* Skills Section */}
-      <div className="mb-8">
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center space-x-3">
-            <div className="bg-green-100 p-2 rounded">
-              <Settings className="w-5 h-5 text-green-600" />
-            </div>
-            <h3 className="text-lg font-semibold text-gray-900">Skills</h3>
-          </div>
-          <button className="text-blue-600 hover:text-blue-800">
-            <Edit className="w-5 h-5" />
-          </button>
-        </div>
-        <div className="bg-gray-50 rounded-lg p-4">
-          <div className="flex flex-wrap gap-2">
-            {[
-              "AJAX", "APIs", "Application development", "Communication skills", 
-              "Debugging", "JSON", "Mobile marketing", "Node.js", "OOP", 
-              "Performance marketing", "React", "Redux", "Responsive web design (1 year)",
-              "REST", "SDLC", "Software troubleshooting", "TypeScript", "UI", 
-              "UI design", "Version control systems", "Web accessibility", 
-              "Web design", "Web development", "XML"
-            ].map((skill, index) => (
-              <span key={index} className="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">
-                {skill}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Languages Section */}
-      <div className="mb-8">
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center space-x-3">
-            <div className="bg-purple-100 p-2 rounded">
-              <Globe className="w-5 h-5 text-purple-600" />
-            </div>
-            <h3 className="text-lg font-semibold text-gray-900">Languages</h3>
-          </div>
-          <button className="text-blue-600 hover:text-blue-800">
-            <Edit className="w-5 h-5" />
-          </button>
-        </div>
-        <div className="bg-gray-50 rounded-lg p-4">
-          <p className="text-gray-700">Bengali, BASIC</p>
-          <p className="text-gray-600 text-sm">English, Intermediate</p>
-        </div>
-      </div>
-
-      {/* Add Sections */}
-      <div className="space-y-4">
-        <h3 className="text-lg font-semibold text-gray-900">Add more details</h3>
-        {[
-          {
-            title: "Add most recent work experience",
-            icon: Briefcase,
-            description: "Highlight your professional background"
-          },
-          {
-            title: "Add licences",
-            icon: Award,
-            description: "Include relevant certifications"
-          },
-          {
-            title: "Add certifications",
-            icon: Award,
-            description: "Show your qualifications"
-          }
-        ].map((item, index) => (
-          <button
-            key={index}
-            className="w-full text-left p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
-          >
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-3">
-                <div className="bg-gray-100 p-2 rounded">
-                  <item.icon className="w-5 h-5 text-gray-600" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-900">{item.title}</h4>
-                  <p className="text-sm text-gray-600">{item.description}</p>
-                </div>
-              </div>
-              <span className="text-2xl text-gray-400">+</span>
-            </div>
-          </button>
-        ))}
-      </div>
-    </div>
-  );
-
-  const renderJobPreferencesSection = () => (
-    <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-sm">
-      {/* Header */}
-      <div className="flex items-center justify-between mb-8">
-        <button 
-          onClick={() => setActiveSection(null)}
-          className="flex items-center text-gray-600 hover:text-gray-800"
-        >
-          <ArrowLeft className="w-5 h-5 mr-2" />
-          Back to Profile
-        </button>
-        <h1 className="text-3xl font-bold text-gray-900">Job Preferences</h1>
-      </div>
-      
-      <p className="text-gray-600 mb-8">
-        Save specific details like minimum desired pay and schedule to get better job matches.
-      </p>
-
-      {/* Salary Preferences */}
-      <div className="mb-8">
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center space-x-3">
-            <div className="bg-green-100 p-2 rounded">
-              <Briefcase className="w-5 h-5 text-green-600" />
-            </div>
-            <h3 className="text-lg font-semibold text-gray-900">Salary Expectations</h3>
-          </div>
-          <button className="text-blue-600 hover:text-blue-800">
-            <Edit className="w-5 h-5" />
-          </button>
-        </div>
-        <div className="bg-gray-50 rounded-lg p-4">
-          <p className="text-gray-700">₹8,00,000 - ₹12,00,000 per annum</p>
-          <p className="text-gray-600 text-sm">Based on experience and skills</p>
-        </div>
-      </div>
-
-      {/* Work Schedule */}
-      <div className="mb-8">
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center space-x-3">
-            <div className="bg-blue-100 p-2 rounded">
-              <Settings className="w-5 h-5 text-blue-600" />
-            </div>
-            <h3 className="text-lg font-semibold text-gray-900">Work Schedule</h3>
-          </div>
-          <button className="text-blue-600 hover:text-blue-800">
-            <Edit className="w-5 h-5" />
-          </button>
-        </div>
-        <div className="bg-gray-50 rounded-lg p-4">
-          <p className="text-gray-700">Full-time, Remote/Hybrid</p>
-          <p className="text-gray-600 text-sm">Flexible with office visits when needed</p>
-        </div>
-      </div>
-
-      {/* Location Preferences */}
-      <div className="mb-8">
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center space-x-3">
-            <div className="bg-purple-100 p-2 rounded">
-              <MapPin className="w-5 h-5 text-purple-600" />
-            </div>
-            <h3 className="text-lg font-semibold text-gray-900">Location Preferences</h3>
-          </div>
-          <button className="text-blue-600 hover:text-blue-800">
-            <Edit className="w-5 h-5" />
-          </button>
-        </div>
-        <div className="bg-gray-50 rounded-lg p-4">
-          <p className="text-gray-700">Noida, Delhi NCR, Remote</p>
-          <p className="text-gray-600 text-sm">Willing to relocate for the right opportunity</p>
-        </div>
-      </div>
-
-      {/* Industry Preferences */}
-      <div className="mb-8">
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center space-x-3">
-            <div className="bg-orange-100 p-2 rounded">
-              <Briefcase className="w-5 h-5 text-orange-600" />
-            </div>
-            <h3 className="text-lg font-semibold text-gray-900">Industry Preferences</h3>
-          </div>
-          <button className="text-blue-600 hover:text-blue-800">
-            <Edit className="w-5 h-5" />
-          </button>
-        </div>
-        <div className="bg-gray-50 rounded-lg p-4">
-          <div className="flex flex-wrap gap-2">
-            {["Technology", "E-commerce", "Fintech", "Healthcare", "Education"].map((industry, index) => (
-              <span key={index} className="bg-orange-100 text-orange-800 text-sm px-3 py-1 rounded-full">
-                {industry}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Add More Preferences */}
-      <div className="space-y-4">
-        <h3 className="text-lg font-semibold text-gray-900">Add more preferences</h3>
-        {[
-          {
-            title: "Add work culture preferences",
-            icon: Briefcase,
-            description: "Specify your preferred work environment"
-          },
-          {
-            title: "Add travel preferences",
-            icon: MapPin,
-            description: "Indicate willingness to travel"
-          },
-          {
-            title: "Add contract preferences",
-            icon: Briefcase,
-            description: "Specify contract vs permanent preferences"
-          }
-        ].map((item, index) => (
-          <button
-            key={index}
-            className="w-full text-left p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
-          >
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-3">
-                <div className="bg-gray-100 p-2 rounded">
-                  <item.icon className="w-5 h-5 text-gray-600" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-900">{item.title}</h4>
-                  <p className="text-sm text-gray-600">{item.description}</p>
-                </div>
-              </div>
-              <span className="text-2xl text-gray-400">+</span>
-            </div>
-          </button>
-        ))}
-      </div>
-    </div>
-  );
-
-  const renderHideJobsSection = () => (
-    <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-sm">
-      <div className="flex items-center justify-between mb-8">
-        <button 
-          onClick={() => setActiveSection(null)}
-          className="flex items-center text-gray-600 hover:text-gray-800"
-        >
-          <ArrowLeft className="w-5 h-5 mr-2" />
-          Back to Profile
-        </button>
-        <h1 className="text-3xl font-bold text-gray-900">Hide Jobs</h1>
-      </div>
-      
-      <p className="text-gray-600 mb-8">
-        Manage the qualifications or preferences used to hide jobs from your search.
-      </p>
-
-      <div className="space-y-6">
-        <div className="bg-gray-50 rounded-lg p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Current Filters</h3>
-          <p className="text-gray-600">No active filters. All jobs are visible.</p>
-        </div>
-
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold text-gray-900">Add filters to hide jobs</h3>
-          {[
-            "Hide jobs below salary threshold",
-            "Hide jobs in specific locations",
-            "Hide jobs from certain companies",
-            "Hide jobs requiring specific skills you don't have"
-          ].map((filter, index) => (
-            <button
-              key={index}
-              className="w-full text-left p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
-            >
-              <div className="flex items-center justify-between">
-                <span className="text-gray-900">{filter}</span>
-                <span className="text-2xl text-gray-400">+</span>
-              </div>
-            </button>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-
-  const renderReadyToWorkSection = () => (
-    <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-sm">
-      <div className="flex items-center justify-between mb-8">
-        <button 
-          onClick={() => setActiveSection(null)}
-          className="flex items-center text-gray-600 hover:text-gray-800"
-        >
-          <ArrowLeft className="w-5 h-5 mr-2" />
-          Back to Profile
-        </button>
-        <h1 className="text-3xl font-bold text-gray-900">Ready to Work</h1>
-      </div>
-      
-      <p className="text-gray-600 mb-8">
-        Let employers know that you're available to start working as soon as possible.
-      </p>
-
-      <div className="space-y-6">
-        <div className="bg-green-50 border border-green-200 rounded-lg p-6">
-          <div className="flex items-center space-x-3 mb-4">
-            <div className="bg-green-100 p-2 rounded">
-              <Award className="w-5 h-5 text-green-600" />
-            </div>
-            <h3 className="text-lg font-semibold text-green-900">Status: Available</h3>
-          </div>
-          <p className="text-green-800">You're currently marked as available for immediate work.</p>
-        </div>
-
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold text-gray-900">Availability Settings</h3>
-          {[
-            {
-              title: "Start Date",
-              value: "Immediately",
-              description: "When you can start working"
-            },
-            {
-              title: "Notice Period",
-              value: "2 weeks",
-              description: "Time needed to leave current role"
-            },
-            {
-              title: "Work Type",
-              value: "Full-time, Part-time",
-              description: "Types of work you're open to"
-            }
-          ].map((setting, index) => (
-            <div key={index} className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
-              <div>
-                <h4 className="font-medium text-gray-900">{setting.title}</h4>
-                <p className="text-sm text-gray-600">{setting.description}</p>
-              </div>
-              <div className="flex items-center space-x-3">
-                <span className="text-gray-700 font-medium">{setting.value}</span>
-                <button className="text-blue-600 hover:text-blue-800">
-                  <Edit className="w-5 h-5" />
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="space-y-4">
-          <h3 className="text-lg font-semibold text-gray-900">Additional Options</h3>
-          {[
-            "Set availability calendar",
-            "Add preferred interview times",
-            "Specify relocation preferences",
-            "Set communication preferences"
-          ].map((option, index) => (
-            <button
-              key={index}
-              className="w-full text-left p-4 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
-            >
-              <div className="flex items-center justify-between">
-                <span className="text-gray-900">{option}</span>
-                <span className="text-2xl text-gray-400">+</span>
-              </div>
-            </button>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-
-  // Render based on active section
-  if (activeSection === 'qualifications') {
-    return <>
-      {renderQualificationsSection()}
+  // Always render the main profile section with modal
+  return (
+    <>
+      {renderProfileSection()}
       {renderVisibilityModal()}
-    </>;
-  } else if (activeSection === 'jobPreferences') {
-    return <>
-      {renderJobPreferencesSection()}
-      {renderVisibilityModal()}
-    </>;
-  } else if (activeSection === 'hideJobs') {
-    return <>
-      {renderHideJobsSection()}
-      {renderVisibilityModal()}
-    </>;
-  } else if (activeSection === 'readyToWork') {
-    return <>
-      {renderReadyToWorkSection()}
-      {renderVisibilityModal()}
-    </>;
-  }
-
-  return <>
-    {renderProfileSection()}
-    {renderVisibilityModal()}
-  </>;
+    </>
+  );
 }
