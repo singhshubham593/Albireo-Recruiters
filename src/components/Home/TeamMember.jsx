@@ -77,7 +77,7 @@ const people = [
     image:  Arnapurna,
   },
   {
-    name: "Rohit yodav",
+    name: "Rohit Yadav",
     role: "Sr. Career Consultant",
     image:  Rohits,
   },
