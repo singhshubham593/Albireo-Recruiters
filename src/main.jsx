@@ -11,7 +11,7 @@ import About from './components/About/About.jsx'
 import Contact from './components/Contact/Contact.jsx'
 import Partner from './components/Partner/Partner.jsx'
 import Profile from './components/Profile/Profile.jsx'
-import Login from './components/login/Login.jsx'
+import Login from './components/Login/Login.jsx'
  
 
 const router = createBrowserRouter(
