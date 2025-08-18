@@ -251,7 +251,7 @@ export default function Header() {
               7
             </span>
           </div>
-          <Link to="/profile">
+          <Link to="/Login">
             <img
               src={avatarUrl}
               className="w-8 h-8 rounded-full object-cover cursor-pointer hover:ring-2 hover:ring-blue-300 transition-all"

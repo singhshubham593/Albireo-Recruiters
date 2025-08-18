@@ -20,6 +20,9 @@ import Leehans from "../../assets/Leehans.jpg";
 import Sagar from "../../assets/Sagar.jpg";
 import PalakKothari from "../../assets/PalakKothari.jpg";
 import Dayabathi from "../../assets/Dayabathi.jpg";
+import Abhishek from "../../assets/Abhishek.jpg";
+import SwetaSinha from "../../assets/SwetaSinha.jpg";
+ 
 
 
 const people = [
@@ -37,6 +40,16 @@ const people = [
     name: "Chiranjeev Singh",
     role: "Manager - HR Operations & Admin",
     image:  Chiranjeev,
+  },
+  {
+    name: "Abhishek Awasthi",
+    role: "Business Head(ITES)",
+    image: Abhishek,
+  },
+  {
+    name: "Sweta Sinha",
+    role: "Assistant Manager(Operations and Finance)",
+    image: SwetaSinha,
   },
   {
     name: "Monika Sharma",
