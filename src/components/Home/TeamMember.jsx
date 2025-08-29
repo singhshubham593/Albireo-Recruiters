@@ -15,7 +15,6 @@ import BhavnaTyagi from "../../assets/BhavnaTyagi.jpg";
 import VandniTyagi from "../../assets/VandniTyagi.jpg";
 import Divya from "../../assets/Divya.jpg";
 import princyGupta from "../../assets/PrincyGupta.jpg";
-import Shweta from "../../assets/Shweta.jpg";
 import Leehans from "../../assets/Leehans.jpg";
 import Sagar from "../../assets/Sagar.jpg";
 import PalakKothari from "../../assets/PalakKothari.jpg";
@@ -32,19 +31,9 @@ const people = [
     image: Siddharth,
   },
   {
-    name: "Honey Sahani",
-    role: "Assistant Manager(Tech)",
-    image:  Honey,
-  },
-  {
     name: "Chiranjeev Singh",
     role: "Manager - HR Operations & Admin",
     image:  Chiranjeev,
-  },
-  {
-    name: "Abhishek Awasthi",
-    role: "Business Head(ITES)",
-    image: Abhishek,
   },
   {
     name: "Sweta Sinha",
@@ -55,6 +44,16 @@ const people = [
     name: "Monika Sharma",
     role: "Assistant Manager(Strategy and consulting)",
     image:  MonikaSharma,
+  },
+  {
+    name: "Honey Sahani",
+    role: "Assistant Manager(Tech)",
+    image:  Honey,
+  },
+  {
+    name: "Abhishek Awasthi",
+    role: "Business Head(ITES)",
+    image: Abhishek,
   },
   {
     name: "Aarohi Sharma",
@@ -77,24 +76,14 @@ const people = [
     image:  Arnapurna,
   },
   {
-    name: "Rohit Yadav",
+    name: "Bhavna Tyagi",
     role: "Sr. Career Consultant",
-    image:  Rohits,
-  },
-  {
-    name: "Jaganmohan Sharma",
-    role: "Sr. Career Consultant",
-    image:  JaganmohanSharma,
+    image:  BhavnaTyagi,
   },
   {
     name: "Nancy Chawla",
     role: "Sr. Career Consultant",
     image:  NancyChawla,
-  },
-  {
-    name: "Bhavna Tyagi",
-    role: "Sr. Career Consultant",
-    image:  BhavnaTyagi,
   },
   {
     name: "Princy Gupta",
@@ -107,24 +96,29 @@ const people = [
     image:  Dayabathi,
   },
   {
-    name: "Sagar Sanjay",
-    role:  "Career Consultant",
-    image: Sagar,
+    name: "Jaganmohan Sharma",
+    role: "Sr. Career Consultant",
+    image:  JaganmohanSharma,
   },
   {
-    name: "Shweta Singh",
-    role:  "Career Consultant",
-    image:  Shweta,
-  },
-  {
-    name: "Palak Kothari",
-    role:  "Career Consultant",
-    image: PalakKothari ,
+    name: "Rohit Yadav",
+    role: "Sr. Career Consultant",
+    image:  Rohits,
   },
   {
     name: "Divya Govind",
     role:  "Career Consultant",
     image:  Divya,
+  },
+  {
+    name: "Sagar Sanjay",
+    role:  "Career Consultant",
+    image: Sagar,
+  },
+  {
+    name: "Palak Kothari",
+    role:  "Career Consultant",
+    image: PalakKothari ,
   },
   {
     name: "Sangmitra",
