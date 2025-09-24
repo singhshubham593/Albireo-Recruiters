@@ -4,11 +4,11 @@ import JobButton from "../../pages/JobButton.jsx";
 import UnderDevelopment from "../../pages/UnderDevelopment.jsx";
 import Jobs from "../../components/JobSeekers/jobs.jsx";
 import Jobsdata from "../../api/axios.js";
-import { useQuery } from "@tanstack/react-query";
-import fetchJobs from "../../api/axios.js";
-import { useSelector, useDispatch } from "react-redux";
-import setJobs from "../../features/JobSlice.js";
-import Button from "../../pages/Button.jsx";
+// import { useQuery } from "@tanstack/react-query";
+// import fetchJobs from "../../api/axios.js";
+// import { useSelector, useDispatch } from "react-redux";
+// import setJobs from "../../features/JobSlice.js";
+// import Button from "../../pages/Button.jsx";
 
 
 
