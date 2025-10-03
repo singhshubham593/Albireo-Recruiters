@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import JobButton from "../../pages/JobButton.jsx";
 import UnderDevelopment from "../../pages/UnderDevelopment.jsx";
-import Jobs from "../../components/JobSeekers/jobs.jsx";
+import Jo from "../../components/JobSeekers/jo.jsx";
 // import Jobsdata from "../../api/axios.js";
 // import { useQuery } from "@tanstack/react-query";
 // import fetchJobs from "../../api/axios.js";
@@ -52,7 +52,7 @@ const JobSeekers = () => {
   return (
     <>
     
-        <Jobs /> 
+        <Jo /> 
       {/* <UnderDevelopment />   */}
     </>
   );
