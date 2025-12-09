@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api=axios.create({
-    baseURL: "https://contest-rryl.onrender.com/jobs",
+    baseURL: "https://server-w0h0.onrender.com/jobs",
     // baseURL: "http://localhost:8000/jobs",
     headers:{
         "content-Type": "application/json",
