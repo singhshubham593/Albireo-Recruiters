@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const api=axios.create({
-    
-    baseURL: "http://localhost:8000/jobs",
+    baseURL: "https://contest-rryl.onrender.com/jobs",
+    // baseURL: "http://localhost:8000/jobs",
     headers:{
         "content-Type": "application/json",
     },
